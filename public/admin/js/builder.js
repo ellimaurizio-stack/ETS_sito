@@ -4,7 +4,17 @@ let blocks = [];
 let cropper = null;
 let activeImageCallback = null;
 
-// ... (saltiamo la ridefinizione di blockTemplates per evitare errori di matching)
+const blockTemplates = {
+    hero: { title_top: "", title_top_span: "", title_bottom: "", title_bottom_span: "", description: "" },
+    textSplit: { title_top: "", title_bottom: "", text_right: "", button_text: "", button_link: "" },
+    imageText: { image_url: "", title: "", text: "", reverse: false },
+    partnersGrid: { title_top: "", title_bottom: "", description: "", button_text: "", button_link: "", logos: [] },
+    htmlRaw: { html: "" },
+    projectHeroDoubleLogo: { bg_image: "", logo_left: "", logo_right: "" },
+    projectIntro: { title_thin: "", title_bold: "", description: "" },
+    imageGallery3: { images: [], align: "center" },
+    textBlock: { title: "", text: "" }
+};
 
 let contactsData = [];
 
@@ -118,7 +128,7 @@ async function loadProjects() {
             document.querySelectorAll('.page-link').forEach(el => el.classList.remove('active'));
             a.classList.add('active');
             currentSlug = null;
-            loadProjectBlocks(p.id, p.project_name);
+            loadProjectBlocks(p.id, p.project_name, p.hero_image);
         };
         list.appendChild(a);
     });
@@ -133,6 +143,7 @@ async function loadPageBlocks(slug, title) {
     document.getElementById('delete-project-btn').style.display = 'none';
     
     document.getElementById('dashboard-view').style.display = 'none';
+    document.getElementById('project-settings-view').style.display = 'none';
     document.getElementById('blocks-list').style.display = 'block';
 
     const res = await fetch(`/api/pages/${slug}/blocks`);
@@ -141,7 +152,7 @@ async function loadPageBlocks(slug, title) {
     renderBlocks();
 }
 
-async function loadProjectBlocks(id, title) {
+async function loadProjectBlocks(id, title, hero_image) {
     currentProjectId = id;
     document.getElementById('current-page-title').innerText = `Progetto: ${title}`;
     document.getElementById('save-page-btn').style.display = 'block';
@@ -150,7 +161,17 @@ async function loadProjectBlocks(id, title) {
     document.getElementById('delete-project-btn').style.display = 'block';
 
     document.getElementById('dashboard-view').style.display = 'none';
+    document.getElementById('project-settings-view').style.display = 'block';
     document.getElementById('blocks-list').style.display = 'block';
+    
+    const preview = document.getElementById('project-cover-preview');
+    if (hero_image) {
+        preview.src = hero_image;
+        preview.style.display = 'block';
+    } else {
+        preview.src = '';
+        preview.style.display = 'none';
+    }
 
     const res = await fetch(`/api/projects/${id}/blocks`);
     blocks = await res.json();
@@ -185,13 +206,37 @@ function renderBlocks() {
         
         let fieldsHtml = '';
         for (const [key, value] of Object.entries(block.content)) {
-            if (key === 'image_url') {
+            if ((key.includes('image') || key.includes('logo')) && !Array.isArray(value)) {
                 fieldsHtml += `
                 <div class="block-field">
                     <label>${key}</label>
                     <input type="text" value="${value}" onchange="updateBlockContent(${index}, '${key}', this.value)">
                     <button onclick="triggerImageUpload(${index}, '${key}')" style="margin-top:5px;">Carica & Croppa</button>
                     ${value ? `<br><img src="${value}" style="max-height:100px; margin-top:5px;">` : ''}
+                </div>`;
+            } else if (Array.isArray(value)) {
+                fieldsHtml += `
+                <div class="block-field">
+                    <label>${key} (Galleria Immagini)</label>
+                    <button onclick="triggerArrayUpload(${index}, '${key}')" style="margin-top:5px; padding: 5px 10px; cursor: pointer;">+ Aggiungi Immagine</button>
+                    <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:10px;">
+                        ${(value || []).map((imgUrl, imgIndex) => `
+                            <div style="position:relative; width: 80px; height: 80px; background: #fff; border: 1px solid #ccc; display:flex; align-items:center; justify-content:center; border-radius: 4px; padding: 5px;">
+                                <img src="${imgUrl}" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                                <button onclick="removeArrayImage(${index}, '${key}', ${imgIndex})" style="position:absolute; top:-8px; right:-8px; background:red; color:white; border:none; border-radius:50%; width:22px; height:22px; cursor:pointer; font-weight:bold; font-size: 12px; line-height: 12px; padding: 0;">×</button>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>`;
+            } else if (key === 'align') {
+                fieldsHtml += `
+                <div class="block-field">
+                    <label>Allineamento</label>
+                    <select onchange="updateBlockContent(${index}, '${key}', this.value)">
+                        <option value="left" ${value === 'left' ? 'selected' : ''}>Sinistra</option>
+                        <option value="center" ${value === 'center' ? 'selected' : ''}>Centro</option>
+                        <option value="right" ${value === 'right' ? 'selected' : ''}>Destra</option>
+                    </select>
                 </div>`;
             } else if (key === 'reverse') {
                 fieldsHtml += `
@@ -260,6 +305,34 @@ window.deleteBlock = function(index) {
     }
 };
 
+window.removeArrayImage = function(blockIndex, key, imgIndex) {
+    if (confirm('Rimuovere questa immagine?')) {
+        blocks[blockIndex].content[key].splice(imgIndex, 1);
+        renderBlocks();
+    }
+};
+
+window.triggerArrayUpload = function(blockIndex, key) {
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = 'image/*';
+    input.onchange = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            const formData = new FormData();
+            formData.append('image', file, file.name);
+            fetch('/api/upload', { method: 'POST', body: formData })
+                .then(r => r.json())
+                .then(data => {
+                    if (!blocks[blockIndex].content[key]) blocks[blockIndex].content[key] = [];
+                    blocks[blockIndex].content[key].push(data.url);
+                    renderBlocks();
+                });
+        }
+    };
+    input.click();
+};
+
 window.triggerImageUpload = function(blockIndex, key) {
     const input = document.createElement('input');
     input.type = 'file';
@@ -319,6 +392,7 @@ async function loadDashboard() {
     document.getElementById('save-page-btn').style.display = 'none';
     document.getElementById('add-block-btn').style.display = 'none';
     document.getElementById('delete-project-btn').style.display = 'none';
+    document.getElementById('project-settings-view').style.display = 'none';
     
     currentSlug = null;
     currentProjectId = null;
@@ -383,3 +457,46 @@ function downloadCSV() {
     a.click();
     document.body.removeChild(a);
 }
+
+document.getElementById('edit-cover-btn').addEventListener('click', () => {
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = 'image/*';
+    input.onchange = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            const url = URL.createObjectURL(file);
+            document.getElementById('image-to-crop').src = url;
+            document.getElementById('cropModal').style.display = 'flex';
+            
+            if (cropper) cropper.destroy();
+            cropper = new Cropper(document.getElementById('image-to-crop'), {
+                aspectRatio: 1 / 1, // Copertina quadrata!
+                viewMode: 1
+            });
+            
+            activeImageCallback = async (uploadedUrl) => {
+                document.getElementById('project-cover-preview').src = uploadedUrl;
+                document.getElementById('project-cover-preview').style.display = 'block';
+                
+                // Save it to the database
+                try {
+                    await fetch(`/api/projects/${currentProjectId}/cover`, {
+                        method: 'PUT',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ hero_image: uploadedUrl })
+                    });
+                    
+                    // Reload projects list to update the sidebar reference
+                    loadProjects();
+                    
+                    alert('Copertina aggiornata con successo!');
+                } catch(err) {
+                    console.error(err);
+                    alert('Errore durante il salvataggio della copertina');
+                }
+            };
+        }
+    };
+    input.click();
+});

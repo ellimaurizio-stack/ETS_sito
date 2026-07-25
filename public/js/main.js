@@ -40,27 +40,11 @@ async function fetchGallery() {
         container.innerHTML = '';
         
         function createProjectCard(project) {
-            const div = document.createElement('div');
-            div.className = 'project-item';
-            div.style.backgroundImage = `url('${project.hero_image}')`;
-
-            const titleDiv = document.createElement('div');
-            titleDiv.className = 'project-title';
-            titleDiv.textContent = project.project_name || 'Progetto';
-
-            div.appendChild(titleDiv);
-
-            // Hover Effect Details
-            const detailsDiv = document.createElement('div');
-            detailsDiv.className = 'project-details';
-            detailsDiv.innerHTML = `
-                <h3>${project.partner_name}</h3>
-                <p>${project.intro_text ? project.intro_text.substring(0, 80) + '...' : ''}</p>
-                <a href="progetto-${project.id}.html" class="btn" style="background: white; color: var(--color-dark-blue);">SCOPRI DI PIÙ</a>
-            `;
-            div.appendChild(detailsDiv);
-
-            return div;
+            const a = document.createElement('a');
+            a.className = 'project-item';
+            a.href = `progetto-${project.id}.html`;
+            a.style.backgroundImage = `url('${project.hero_image}')`;
+            return a;
         }
 
         projects.forEach(proj => {

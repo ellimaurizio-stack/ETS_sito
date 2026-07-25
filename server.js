@@ -99,6 +99,13 @@ app.delete('/api/projects/:id', (req, res) => {
     });
 });
 
+app.put('/api/projects/:id/cover', express.json(), (req, res) => {
+    db.run(`UPDATE projects SET hero_image = ? WHERE id = ?`, [req.body.hero_image, req.params.id], function(err) {
+        if (err) return res.status(500).json({ error: err.message });
+        res.json({ success: true, message: 'Cover updated' });
+    });
+});
+
 // --- PAGES API (CMS) ---
 app.get('/api/pages', (req, res) => {
     db.all(`SELECT * FROM pages ORDER BY id ASC`, [], (err, rows) => {
