@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A-Tono ETS - Contatti</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo"><img src="img/ets-logo-navbar.png" alt="e-ts" style="max-height: 40px;"></div>
+        <div class="menu-toggle">&#9776;</div>
+        <ul class="nav-links">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="chi-siamo.html">CHI SIAMO</a></li>
+            <li><a href="progetti.html">PROGETTI</a></li>
+            <li><a href="sostienici.html">SOSTIENICI</a></li>
+            <li><a href="contatti.html">CONTATTI</a></li>
+        </ul>
+    </nav>
+
+    <header style="background: var(--color-gradient-top); color: white; padding: 10rem 5% 15rem 5%; display: flex; flex-wrap: wrap; gap: 2rem; position: relative;">
+        <div style="flex: 1; min-width: 300px;">
+            <h1 style="font-weight: 300; font-size: 6rem; margin: 0; color: white; border-bottom: 2px solid white; padding-bottom: 10px; display: inline-block; line-height: 1;">Contatti</h1>
+        </div>
+        <div style="flex: 1; min-width: 300px; font-weight: 300; font-size: 1.1rem; line-height: 1.6; display: flex; align-items: flex-end;">
+            <p style="margin: 0; max-width: 450px;">Siamo sempre <strong>in cerca di realtà con le quali collaborare</strong> per mettere gratuitamente a loro disposizione competenze, tempo e denaro per dar vita a progetti con finalità di solidarietà sociale a favore dei più svantaggiati.</p>
+        </div>
+    </header>
+
+    <main>
+        <div style="padding: 0 0 4rem 5%; margin-top: -10rem; position: relative; z-index: 10;">
+            <img src="img/contatti-hero.jpg" alt="Contatti" style="width: 100%; max-width: 1400px; height: auto; display: block; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+        </div>
+
+        <section class="flex-section text-left" style="margin-top: 5rem; max-width: 1200px; margin-left: auto; margin-right: auto; padding: 0 5% 6rem 5%;">
+            <div style="flex: 1;">
+                <div class="section-header" style="margin-bottom: 0;">
+                    <h2 style="font-weight: 300; font-size: 3.5rem; letter-spacing: 1px; color: var(--color-text);">Hai domande o proposte?</h2>
+                    <h2 style="font-weight: 700; font-size: 4.5rem; letter-spacing: 30px; color: var(--color-light-blue); margin-top: -10px; border-bottom: 2px solid var(--color-text); padding-bottom: 10px; display: inline-block;">CONTATTACI</h2>
+                </div>
+            </div>
+            <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-end; gap: 0.8rem; font-size: 1.1rem; padding-bottom: 10px; color: var(--color-text);">
+                <p style="margin: 0;"><strong>TEL:</strong> (+39) 02 32069100</p>
+                <p style="margin: 0;"><strong>EMAIL:</strong> ets@a-tono.com</p>
+                <p style="margin: 0;"><strong>PEC:</strong> atono_ets@pec.it</p>
+            </div>
+        </section>
+
+        <section class="bg-gradient-blue flex-section" style="max-width: 100%; padding: 6rem 10%;">
+            <div style="flex: 1;">
+                <h2 style="font-size: 4rem; margin-bottom: 1.5rem; font-weight: 300; line-height: 1.1;">Manda un<br>messaggio</h2>
+                <p style="max-width: 400px; font-weight: 300; font-size: 1.1rem; line-height: 1.6; margin-bottom: 3rem;">Contattaci se sei in cerca di informazioni, se hai dei dubbi o se hai delle proposte da farci per aiutare altre organizzazioni.</p>
+                
+                <div style="position: relative; max-width: 300px;">
+                    <select id="motivationSelect" name="motivation" style="appearance: none; -webkit-appearance: none; background: transparent; color: white; font-size: 1.1rem; font-weight: 300; border: 1px solid white; border-radius: 30px; padding: 15px 40px 15px 30px; cursor: pointer; width: 100%; outline: none; margin-bottom: 2rem;">
+                        <option value="Sostienici" style="color: black;">Vorrei donare ad A-Tono ETS</option>
+                        <option value="Volontariato" style="color: black;">Vorrei fare volontariato</option>
+                        <option value="Partnership" style="color: black;">Vorrei proporre una partnership</option>
+                        <option value="Altro" style="color: black;">Altro</option>
+                    </select>
+                    <div style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); pointer-events: none; color: var(--color-dark-blue); font-weight: bold; font-size: 0.8rem;">v</div>
+                </div>
+            </div>
+            <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+                <form id="contactForm" style="max-width: 500px; width: 100%;">
+                    <div class="form-group" style="margin-bottom: 2rem;">
+                        <input type="text" name="name" placeholder="NOME E COGNOME *" required style="font-size: 0.9rem; letter-spacing: 1px; padding: 15px 0;">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 2rem;">
+                        <input type="email" name="email" placeholder="E-MAIL *" required style="font-size: 0.9rem; letter-spacing: 1px; padding: 15px 0;">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 2rem;">
+                        <input type="tel" name="phone" placeholder="TELEFONO" style="font-size: 0.9rem; letter-spacing: 1px; padding: 15px 0;">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 2rem;">
+                        <textarea rows="3" name="message" placeholder="IL TUO MESSAGGIO" style="font-size: 0.9rem; letter-spacing: 1px; padding: 15px 0; resize: none;"></textarea>
+                    </div>
+                    
+                    <div style="margin-bottom: 2.5rem;">
+                        <a href="#" target="_blank" style="color: white; text-decoration: underline; font-size: 0.85rem; font-weight: 300; display: inline-block; margin-bottom: 1rem; opacity: 0.8; transition: opacity 0.3s ease;">Leggi l'Informativa privacy (PDF)</a>
+                        <div style="display: flex; align-items: flex-start; gap: 10px;">
+                            <input type="checkbox" id="privacyCheck" name="privacyCheck" required style="margin-top: 4px; accent-color: var(--color-light-blue); width: 16px; height: 16px; cursor: pointer;">
+                            <label for="privacyCheck" style="font-size: 0.85rem; font-weight: 300; color: white; opacity: 0.9; line-height: 1.4; cursor: pointer;">
+                                Ho letto l'informativa privacy e acconsento al trattamento dei miei dati per essere ricontattato ai fini della motivazione scelta.
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn" style="background-color: var(--color-light-blue); color: white; border-radius: 30px; padding: 12px 30px; border: none; font-weight: 500; font-size: 1rem; cursor: pointer; text-transform: uppercase; margin-top: 0;">INVIA IL MESSAGGIO</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-title"><p>Hai bisogno di aiuto?</p><h3>Contattaci</h3></div>
+            <div class="footer-col"><h4>Seguici su:</h4><p><img src="img/facebook.png" alt="Facebook" style="height: 24px; margin-right: 10px;"> <img src="img/In.png" alt="LinkedIn" style="height: 24px;"></p></div>
+            <div class="footer-col"><h4>MILANO</h4><p>Corso Buenos Aires, 77</p></div>
+            <div class="footer-col"><h4>A-Tono E.T.S.</h4><p>ets.a-tono.com</p></div>
+            <div class="footer-col"><h4>Codice Fiscale</h4><p>97737800157</p></div>
+            <div class="footer-logo"><img src="img/ets-logo-navbar.png" alt="e-ts" style="max-height: 50px;"></div>
+        </div>
+        <div class="footer-bottom">A-Tono E.T.S. - Ente del terzo settore - Codice Fiscale 97737800157</div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

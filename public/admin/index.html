@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMS Page Builder</title>
+    <link rel="stylesheet" href="css/admin.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        .builder-layout { display: flex; height: 100vh; overflow: hidden; }
+        .sidebar { width: 250px; background: #1e293b; color: white; padding: 20px; overflow-y: auto; }
+        .sidebar h3 { color: #94a3b8; font-size: 0.9rem; text-transform: uppercase; margin-bottom: 10px; }
+        .page-link { display: block; padding: 10px; color: white; text-decoration: none; border-radius: 5px; margin-bottom: 5px; }
+        .page-link:hover, .page-link.active { background: #334155; }
+        
+        .main-editor { flex: 1; padding: 30px; overflow-y: auto; background: #f8fafc; }
+        .header-editor { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        
+        .blocks-container { display: flex; flex-direction: column; gap: 15px; }
+        .block-card { background: white; border: 1px solid #cbd5e1; border-radius: 8px; padding: 15px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); position: relative; }
+        .block-header { display: flex; justify-content: space-between; font-weight: bold; margin-bottom: 15px; border-bottom: 1px solid #e2e8f0; padding-bottom: 10px; }
+        .block-actions button { margin-left: 5px; padding: 4px 8px; font-size: 0.8rem; cursor: pointer; }
+        
+        .block-field { margin-bottom: 10px; }
+        .block-field label { display: block; font-size: 0.85rem; color: #64748b; margin-bottom: 3px; }
+        .block-field input, .block-field textarea, .block-field select { width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px; }
+        
+        .add-block-btn { margin-top: 20px; padding: 10px; width: 100%; border: 2px dashed #94a3b8; background: transparent; cursor: pointer; font-weight: bold; color: #475569; }
+        .add-block-btn:hover { background: #e2e8f0; }
+
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; justify-content: center; align-items: center; }
+        .modal-content { background: white; padding: 20px; border-radius: 8px; max-width: 800px; width: 90%; max-height: 90vh; display: flex; flex-direction: column; }
+        .cropper-container { flex: 1; min-height: 400px; background: #f1f1f1; margin: 15px 0; }
+        img { max-width: 100%; }
+    </style>
+</head>
+<body>
+    <div class="builder-layout">
+        <div class="sidebar">
+            <h3>Pagine Statiche</h3>
+            <div id="pages-list">Caricamento...</div>
+            <br>
+            <h3>Progetti (Dettaglio)</h3>
+            <div id="projects-list">Caricamento...</div>
+            <button id="create-project-btn" class="btn" style="width: 100%; margin-top: 10px; padding: 8px; font-size: 0.9rem;">+ Nuovo Progetto</button>
+            <br>
+        </div>
+        
+        <div class="main-editor">
+            <div class="header-editor">
+                <h2 id="current-page-title">Dashboard - Messaggi Ricevuti</h2>
+                <div style="display:flex; gap:10px;">
+                    <button id="delete-project-btn" class="btn" style="display:none; padding: 10px 20px; background-color: #ef4444;">Elimina Progetto</button>
+                    <button id="save-page-btn" class="btn" style="display:none; padding: 10px 20px;">Salva & Genera Sito (SSG)</button>
+                </div>
+            </div>
+            
+            <div id="dashboard-view" style="padding: 20px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <h3>Elenco Contatti</h3>
+                    <button id="download-csv-btn" class="btn" style="background: #2563eb; padding: 8px 15px;">Scarica CSV</button>
+                </div>
+                <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                    <thead>
+                        <tr style="border-bottom: 1px solid #e2e8f0;">
+                            <th style="padding: 10px;">Data</th>
+                            <th style="padding: 10px;">Nome</th>
+                            <th style="padding: 10px;">Email</th>
+                            <th style="padding: 10px;">Telefono</th>
+                            <th style="padding: 10px;">Motivo</th>
+                            <th style="padding: 10px;">Messaggio</th>
+                        </tr>
+                    </thead>
+                    <tbody id="contacts-list">
+                        <tr><td colspan="6" style="padding: 10px;">Caricamento...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="blocks-list" class="blocks-container" style="display: none;">
+                <!-- Blocks will be rendered here -->
+            </div>
+            
+            <button id="add-block-btn" class="add-block-btn" style="display:none;">+ Aggiungi Blocco</button>
+        </div>
+    </div>
+
+    <!-- Cropper Modal -->
+    <div id="cropModal" class="modal">
+        <div class="modal-content">
+            <h3>Ritaglia Immagine</h3>
+            <div class="cropper-container">
+                <img id="image-to-crop" src="">
+            </div>
+            <div style="display: flex; justify-content: flex-end; gap: 10px;">
+                <button id="cancel-crop-btn" class="btn" style="background:#ef4444;">Annulla</button>
+                <button id="save-crop-btn" class="btn">Ritaglia & Carica</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
+    <script src="js/builder.js"></script>
+</body>
+</html>

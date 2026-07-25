@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A-Tono ETS - Progetti</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo"><img src="img/ets-logo-navbar.png" alt="e-ts" style="max-height: 40px;"></div>
+        <div class="menu-toggle">&#9776;</div>
+        <ul class="nav-links">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="chi-siamo.html">CHI SIAMO</a></li>
+            <li><a href="progetti.html">PROGETTI</a></li>
+            <li><a href="sostienici.html">SOSTIENICI</a></li>
+            <li><a href="contatti.html">CONTATTI</a></li>
+        </ul>
+    </nav>
+
+    <header style="width: 100%; position: relative;">
+        <img src="img/progetti-hero.jpg" alt="I Nostri Progetti" style="width: 100%; height: auto; display: block;">
+    </header>
+
+    <main>
+
+        <section style="background: white; padding: 2rem 5% 4rem 5%; max-width: 1400px; margin: 0 auto; color: var(--color-dark-blue);">
+            <h2 style="margin: 0; line-height: 1.1; margin-bottom: 10px; font-weight: 300; font-size: 2.5rem;">I nostri</h2>
+            <div style="display: flex; align-items: flex-start;">
+                <div style="font-size: 6rem; font-weight: 300; letter-spacing: 25px; border-bottom: 2px solid var(--color-light-blue); padding-bottom: 5px; line-height: 1; flex-shrink: 0;">PROG</div>
+                <div style="display: flex; flex-direction: column;">
+                    <div style="font-size: 6rem; font-weight: 300; letter-spacing: 25px; line-height: 1; padding-bottom: 7px;">ETTI</div>
+                    <div style="font-size: 1.1rem; line-height: 1.8; max-width: 700px; margin-top: 2rem;">
+                        <p style="margin: 0; font-weight: 300;">Fino a oggi, abbiamo incontrato persone fantastiche con le quali abbiamo sviluppato bei progetti, ricchi di emozione e gioia nel farli. Abbiamo toccato il tema dell'integrazione, del primo soccorso pediatrico, dei bimbi dal "cuore matto" per passare alla prevenzione. Ma non finisce qui! Ancora tanto vogliamo fare perché come recita un vecchio detto popolare siciliano: "Fai del bene e scordatelo".</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galleria Progetti Dinamica (caricata dal CMS) -->
+        <div class="projects-grid" id="gallery_container">
+            <!-- Saranno renderizzati tramite main.js dal db SQLite -->
+            <!-- Esempio statico visibile prima del caricamento JS -->
+            <div class="project-item" style="background: #ccc;"></div>
+            <div class="project-item" style="background: #ddd;"></div>
+            <div class="project-item" style="background-color: #1e293b;"></div>
+        </div>
+        
+        <div class="text-center" style="margin: 4rem 0;">
+            <a href="#" class="btn">SCOPRI LE ALTRE INIZIATIVE</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-title">
+                <p>Hai bisogno di aiuto?</p>
+                <h3>Contattaci</h3>
+            </div>
+            <div class="footer-col"><h4>Seguici su:</h4><p><img src="img/facebook.png" alt="Facebook" style="height: 24px; margin-right: 10px;"> <img src="img/In.png" alt="LinkedIn" style="height: 24px;"></p></div>
+            <div class="footer-col"><h4>MILANO</h4><p>Corso Buenos Aires, 77<br>20124 (MI)</p></div>
+            <div class="footer-col"><h4>A-Tono E.T.S.</h4><p>ets.a-tono.com</p></div>
+            <div class="footer-col"><h4>Codice Fiscale</h4><p>97737800157</p></div>
+            <div class="footer-logo"><img src="img/ets-logo-navbar.png" alt="e-ts" style="max-height: 50px;"></div>
+        </div>
+        <div class="footer-bottom">A-Tono E.T.S. - Ente del terzo settore - Codice Fiscale 97737800157</div>
+    </footer>
+    <script src="js/main.js?v=2"></script>
+</body>
+</html>
