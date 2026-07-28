@@ -3,14 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A-Tono ETS - Progetto 8</title>
+    <title>A-Tono ETS - Dettaglio Progetto</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .project-hero {
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        .project-hero::before {
+            content: '';
+            position: absolute;
+            top:0; left:0; right:0; bottom:0;
+            background: rgba(23, 44, 74, 0.7); /* Blu scuro in overlay */
+            z-index: 1;
+        }
+        .project-hero-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            width: 100%;
+            max-width: 800px;
+            justify-content: space-between;
+        }
+        .project-hero-content img {
+            max-height: 80px;
+        }
+        .separator {
+            width: 2px;
+            height: 100px;
+            background: white;
+        }
+        .project-title-section {
+            display: flex;
+            gap: 4rem;
+            margin-top: -3rem; /* Per avvicinarlo all'header come da design */
+        }
+        .project-title-left { flex: 1; }
+        .project-title-right { flex: 1; font-weight: 300; }
+        
+        .image-gallery-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 4rem 0;
+        }
+        .image-gallery-3 img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        .main-content {
+            font-size: 1rem;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .main-content h3 {
+            color: var(--color-dark-blue);
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-top: 2rem;
+        }
+    </style>
 </head>
 <body>
     <nav>
-        <div class="logo">
-            <img src="img/ets-logo-navbar.png" alt="e-ts" style="max-height: 40px;">
-        </div>
+        <div class="logo"><img src="img/ets-logo-navbar.png" alt="e-ts" style="max-height: 40px;"></div>
         <div class="menu-toggle">&#9776;</div>
         <ul class="nav-links">
             <li><a href="index.html">HOME</a></li>
@@ -20,63 +86,62 @@
             <li><a href="contatti.html">CONTATTI</a></li>
         </ul>
     </nav>
-    <main>
-    <header class="hero" style="min-height: 80vh; padding: 2rem 5% 5rem 5%; justify-content: flex-end; align-items: center; position: relative;">
-        <div style="width: 100%; max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: left;">
-            <div style="font-size: 8rem; font-style: italic; font-weight: 300; line-height: 1; letter-spacing: -2px;">
-                <div style="padding-right: 15rem; opacity: 0.9;">Partner 8 <span style="font-weight: 100;"></span></div>
-                <div style="padding-left: 5rem; opacity: 0.9;">Progetto 8 <span style="font-weight: 100;"></span></div>
+
+    <header class="project-hero" id="hero_section">
+        <div class="project-hero-content" style="display: flex; align-items: center; justify-content: center; gap: 3rem; width: 100%;">
+            <div style="flex: 1; text-align: right;">
+                <img id="partner_logo" src="" alt="Partner Logo" style="max-height: 80px; width: auto;">
             </div>
-            <div style="display: flex; align-items: center; gap: 4rem; margin-top: 6rem; width: 100%; max-width: 900px;">
-                <div style="flex: 1; height: 2px; background: white; opacity: 0.8;"></div>
-                <div style="flex: 1; text-align: left; font-size: 1.1rem; font-weight: 300; line-height: 1.6;">
-                    null
-                </div>
+            <div class="separator" style="width: 1px; height: 120px; background: white;"></div>
+            <div style="flex: 1; text-align: left;">
+                <img src="img/ets-logo-navbar.png" alt="e-ts" style="max-height: 60px;">
             </div>
         </div>
     </header>
-    <section class="flex-section text-left" style="margin-top: 2rem; max-width: 1200px; padding: 5rem 5%; margin-left: auto; margin-right: auto; ">
-        <div style="flex: 1;">
-            <img src="/img/progetto-8.png" style="width: 100%; border-radius: 8px;">
-        </div>
-        <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 2rem;">
-            <h2>Il Progetto</h2>
-            <p style="font-size: 1.1rem; line-height: 1.8; margin: 0; color: var(--color-text);">
-                null
-            </p>
-        </div>
-    </section>
+
+    <main>
+        <section>
+            <section class="flex-section text-left" style="margin-top: 5rem; max-width: 1200px; margin-left: auto; margin-right: auto; padding: 0 5% 6rem 5%;">
+                <div style="flex: 1;">
+                    <div class="section-header" style="margin-bottom: 0;">
+                        <h2 id="partner_name" style="font-weight: 300; font-size: 3.5rem; letter-spacing: 1px; color: var(--color-text); margin: 0; line-height: 1;">Fondazione</h2>
+                        <h2 id="project_name" style="font-weight: 700; font-size: 4rem; letter-spacing: 15px; color: var(--color-light-blue); margin-top: 10px; border-bottom: 2px solid var(--color-text); padding-bottom: 15px; display: inline-block;">IL BULLONE</h2>
+                    </div>
+                </div>
+                <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: flex-start;">
+                    <p id="intro_text" style="margin: 0; font-size: 1.1rem; line-height: 1.8; color: var(--color-text);">
+                        Testo introduttivo del progetto...
+                    </p>
+                </div>
+            </section>
+
+            <!-- Prima griglia di immagini (immagini 1,2,3) -->
+            <div class="image-gallery-3" id="gallery_top" style="max-width: 1200px; margin: 0 auto 4rem auto; padding: 0 5%;"></div>
+
+            <div class="main-content" id="main_content" style="max-width: 900px; padding: 0 5%;">
+                <!-- Il testo lungo verrà inserito qui -->
+            </div>
+
+            <!-- Seconda griglia di immagini (immagini 4,5,6) -->
+            <div class="image-gallery-3" id="gallery_bottom" style="max-width: 1200px; margin: 4rem auto; padding: 0 5%;"></div>
+
+            <div class="text-center" style="margin-top: 5rem; padding-bottom: 5rem;">
+                <a href="progetti.html" class="btn" style="background-color: var(--color-light-blue); color: white; border-radius: 30px; padding: 15px 40px; font-weight: 500; font-size: 1rem;">TORNA AI PROGETTI</a>
+            </div>
+        </section>
     </main>
+
     <footer>
         <div class="footer-content">
-            <div class="footer-title">
-                <p>Hai bisogno di aiuto?</p>
-                <h3>Contattaci</h3>
-            </div>
-            <div class="footer-col">
-                <h4>Seguici su:</h4>
-                <p><img src="img/facebook.png" alt="Facebook" style="height: 24px; margin-right: 10px;"> <img src="img/In.png" alt="LinkedIn" style="height: 24px;"></p>
-            </div>
-            <div class="footer-col">
-                <h4>MILANO</h4>
-                <p>Corso Buenos Aires, 77<br>20124 (MI)</p>
-            </div>
-            <div class="footer-col">
-                <h4>A-Tono E.T.S.</h4>
-                <p>ets.a-tono.com<br>Ente del terzo settore</p>
-            </div>
-            <div class="footer-col">
-                <h4>Codice Fiscale</h4>
-                <p>97737800157</p>
-            </div>
-            <div class="footer-logo">
-                <img src="img/ets-logo-navbar.png" alt="e-ts" style="max-height: 50px;">
-            </div>
+            <div class="footer-title"><p>Hai bisogno di aiuto?</p><h3>Contattaci</h3></div>
+            <div class="footer-col"><h4>Seguici su:</h4><p><img src="img/facebook.png" alt="Facebook" style="height: 24px; margin-right: 10px;"> <img src="img/In.png" alt="LinkedIn" style="height: 24px;"></p></div>
+            <div class="footer-col"><h4>MILANO</h4><p>Corso Buenos Aires, 77</p></div>
+            <div class="footer-col"><h4>A-Tono E.T.S.</h4><p>ets.a-tono.com</p></div>
+            <div class="footer-col"><h4>Codice Fiscale</h4><p>97737800157</p></div>
+            <div class="footer-logo"><img src="img/ets-logo-navbar.png" alt="e-ts" style="max-height: 50px;"></div>
         </div>
-        <div class="footer-bottom">
-            A-Tono E.T.S. - Ente del terzo settore - Codice Fiscale 97737800157
-        </div>
+        <div class="footer-bottom">A-Tono E.T.S. - Ente del terzo settore - Codice Fiscale 97737800157</div>
     </footer>
-    <script src="js/main.js"></script>
+    <script src="js/progetto.js"></script>
 </body>
 </html>

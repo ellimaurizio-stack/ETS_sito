@@ -8,7 +8,9 @@
 </head>
 <body>
     <nav>
-        <div class="logo"><img src="img/ets-logo-navbar.png" alt="e-ts" style="max-height: 40px;"></div>
+        <div class="logo">
+            <img src="img/ets-logo-navbar.png" alt="e-ts" style="max-height: 40px;">
+        </div>
         <div class="menu-toggle">&#9776;</div>
         <ul class="nav-links">
             <li><a href="index.html">HOME</a></li>
@@ -18,54 +20,138 @@
             <li><a href="contatti.html">CONTATTI</a></li>
         </ul>
     </nav>
-
-    <header style="width: 100%; position: relative;">
+    <main><header style="width: 100%; position: relative;">
         <img src="img/progetti-hero.jpg" alt="I Nostri Progetti" style="width: 100%; height: auto; display: block;">
     </header>
 
     <main>
 
-        <section style="background: white; padding: 2rem 5% 4rem 5%; max-width: 1400px; margin: 0 auto; color: var(--color-dark-blue);">
-            <h2 style="margin: 0; line-height: 1.1; margin-bottom: 10px; font-weight: 300; font-size: 2.5rem;">I nostri</h2>
-            <div style="display: flex; align-items: flex-start;">
-                <div style="font-size: 6rem; font-weight: 300; letter-spacing: 25px; border-bottom: 2px solid var(--color-light-blue); padding-bottom: 5px; line-height: 1; flex-shrink: 0;">PROG</div>
-                <div style="display: flex; flex-direction: column;">
-                    <div style="font-size: 6rem; font-weight: 300; letter-spacing: 25px; line-height: 1; padding-bottom: 7px;">ETTI</div>
-                    <div style="font-size: 1.1rem; line-height: 1.8; max-width: 700px; margin-top: 2rem;">
-                        <p style="margin: 0; font-weight: 300;">Fino a oggi, abbiamo incontrato persone fantastiche con le quali abbiamo sviluppato bei progetti, ricchi di emozione e gioia nel farli. Abbiamo toccato il tema dell'integrazione, del primo soccorso pediatrico, dei bimbi dal "cuore matto" per passare alla prevenzione. Ma non finisce qui! Ancora tanto vogliamo fare perché come recita un vecchio detto popolare siciliano: "Fai del bene e scordatelo".</p>
-                    </div>
+        <section class="flex-section text-left" style="background: white; margin-top: 5rem; max-width: 1500px; margin-left: auto; margin-right: auto; padding: 0 5% 6rem 5%; color: var(--color-dark-blue);">
+            <div style="flex: 1;">
+                <div class="section-header" style="margin-bottom: 0;">
+                    <h2 style="font-weight: 300; font-size: 3.5rem; letter-spacing: 1px; color: var(--color-text);">I nostri</h2>
+                    <h2 style="font-weight: 700; font-size: 4.5rem; letter-spacing: 30px; color: var(--color-light-blue); margin-top: 10px; border-bottom: 2px solid var(--color-text); padding-bottom: 10px; display: inline-block;">PROGETTI</h2>
                 </div>
             </div>
+            <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; margin-top: 9rem; font-size: 1.1rem; padding-bottom: 10px; color: var(--color-text);">
+                <p style="margin: 0; font-weight: 300; line-height: 1.8; max-width: 700px;">Fino a oggi, abbiamo incontrato persone fantastiche con le quali abbiamo sviluppato bei progetti, ricchi di emozione e <strong style="color: var(--color-light-blue); font-weight: 700;">gioia</strong> nel farli. Abbiamo toccato il tema dell'integrazione, del primo soccorso pediatrico, dei bimbi dal "cuore matto" per passare alla prevenzione. Ma non finisce qui! Ancora tanto vogliamo fare perché come recita un vecchio detto popolare siciliano: "<strong style="color: var(--color-light-blue); font-weight: 700;">Fai del bene e scordatelo</strong>".</p>
+            </div>
         </section>
-
-        <!-- Galleria Progetti Dinamica (caricata dal CMS) -->
-        <div class="projects-grid" id="gallery_container">
-            <!-- Saranno renderizzati tramite main.js dal db SQLite -->
-            <!-- Esempio statico visibile prima del caricamento JS -->
-            <div class="project-item" style="background: #ccc;"></div>
-            <div class="project-item" style="background: #ddd;"></div>
-            <div class="project-item" style="background-color: #1e293b;"></div>
-        </div>
         
-        <div class="text-center" style="margin: 4rem 0;">
-            <a href="#" class="btn">SCOPRI LE ALTRE INIZIATIVE</a>
+        <div class="projects-grid" style="margin-bottom: 0;">
+            <a href="progetto-20.html" class="project-grid-item">
+                <img src="img/progetto-20.jpg" alt="Progetto 20">
+                <div class="project-grid-overlay"></div>
+            </a>
+            <a href="progetto-bullone.html" class="project-grid-item">
+                <img src="img/progetto-19.jpg" alt="Progetto 19">
+                <div class="project-grid-overlay"></div>
+            </a>
+            <a href="progetto-18.html" class="project-grid-item">
+                <img src="img/progetto-18.jpg" alt="Progetto 18">
+                <div class="project-grid-overlay"></div>
+            </a>
+            <a href="progetto-17.html" class="project-grid-item">
+                <img src="img/progetto-17.jpg" alt="Progetto 17">
+                <div class="project-grid-overlay"></div>
+            </a>
+            <a href="progetto-16.html" class="project-grid-item">
+                <img src="img/progetto-16.jpg" alt="Progetto 16">
+                <div class="project-grid-overlay"></div>
+            </a>
+            <a href="progetto-15.html" class="project-grid-item">
+                <img src="img/progetto-15.jpg" alt="Progetto 15">
+                <div class="project-grid-overlay"></div>
+            </a>
+            <a href="progetto-14.html" class="project-grid-item">
+                <img src="img/progetto-14.jpg" alt="Progetto 14">
+                <div class="project-grid-overlay"></div>
+            </a>
+            <a href="progetto-13.html" class="project-grid-item">
+                <img src="img/progetto-13.jpg" alt="Progetto 13">
+                <div class="project-grid-overlay"></div>
+            </a>
+            <a href="progetto-12.html" class="project-grid-item">
+                <img src="img/progetto-12.jpg" alt="Progetto 12">
+                <div class="project-grid-overlay"></div>
+            </a>
+            <a href="progetto-11.html" class="project-grid-item">
+                <img src="img/progetto-11.jpg" alt="Progetto 11">
+                <div class="project-grid-overlay"></div>
+            </a>
+            <a href="progetto-10.html" class="project-grid-item">
+                <img src="img/progetto-10.jpg" alt="Progetto 10">
+                <div class="project-grid-overlay"></div>
+            </a>
+            <a href="progetto-9.html" class="project-grid-item">
+                <img src="img/progetto-9.jpg" alt="Progetto 9">
+                <div class="project-grid-overlay"></div>
+            </a>
+            <a href="progetto-8.html" class="project-grid-item">
+                <img src="img/progetto-8.jpg" alt="Progetto 8">
+                <div class="project-grid-overlay"></div>
+            </a>
+            <a href="progetto-7.html" class="project-grid-item">
+                <img src="img/progetto-7.jpg" alt="Progetto 7">
+                <div class="project-grid-overlay"></div>
+            </a>
+            <a href="progetto-6.html" class="project-grid-item">
+                <img src="img/progetto-6.jpg" alt="Progetto 6">
+                <div class="project-grid-overlay"></div>
+            </a>
+            <a href="progetto-5.html" class="project-grid-item">
+                <img src="img/progetto-5.jpg" alt="Progetto 5">
+                <div class="project-grid-overlay"></div>
+            </a>
+            <a href="progetto-4.html" class="project-grid-item">
+                <img src="img/progetto-4.jpg" alt="Progetto 4">
+                <div class="project-grid-overlay"></div>
+            </a>
+            <a href="progetto-3.html" class="project-grid-item">
+                <img src="img/progetto-3.jpg" alt="Progetto 3">
+                <div class="project-grid-overlay"></div>
+            </a>
+            <a href="progetto-2.html" class="project-grid-item">
+                <img src="img/progetto-2.jpg" alt="Progetto 2">
+                <div class="project-grid-overlay"></div>
+            </a>
+            <a href="progetto-1.html" class="project-grid-item">
+                <img src="img/progetto-1.jpg" alt="Progetto 1">
+                <div class="project-grid-overlay"></div>
+            </a>
         </div>
     </main>
-
+    </main>
     <footer>
         <div class="footer-content">
             <div class="footer-title">
                 <p>Hai bisogno di aiuto?</p>
                 <h3>Contattaci</h3>
             </div>
-            <div class="footer-col"><h4>Seguici su:</h4><p><img src="img/facebook.png" alt="Facebook" style="height: 24px; margin-right: 10px;"> <img src="img/In.png" alt="LinkedIn" style="height: 24px;"></p></div>
-            <div class="footer-col"><h4>MILANO</h4><p>Corso Buenos Aires, 77<br>20124 (MI)</p></div>
-            <div class="footer-col"><h4>A-Tono E.T.S.</h4><p>ets.a-tono.com</p></div>
-            <div class="footer-col"><h4>Codice Fiscale</h4><p>97737800157</p></div>
-            <div class="footer-logo"><img src="img/ets-logo-navbar.png" alt="e-ts" style="max-height: 50px;"></div>
+            <div class="footer-col">
+                <h4>Seguici su:</h4>
+                <p><img src="img/facebook.png" alt="Facebook" style="height: 24px; margin-right: 10px;"> <img src="img/In.png" alt="LinkedIn" style="height: 24px;"></p>
+            </div>
+            <div class="footer-col">
+                <h4>MILANO</h4>
+                <p>Corso Buenos Aires, 77<br>20124 (MI)</p>
+            </div>
+            <div class="footer-col">
+                <h4>A-Tono E.T.S.</h4>
+                <p>ets.a-tono.com<br>Ente del terzo settore</p>
+            </div>
+            <div class="footer-col">
+                <h4>Codice Fiscale</h4>
+                <p>97737800157</p>
+            </div>
+            <div class="footer-logo">
+                <img src="img/ets-logo-navbar.png" alt="e-ts" style="max-height: 50px;">
+            </div>
         </div>
-        <div class="footer-bottom">A-Tono E.T.S. - Ente del terzo settore - Codice Fiscale 97737800157</div>
+        <div class="footer-bottom">
+            A-Tono E.T.S. - Ente del terzo settore - Codice Fiscale 97737800157
+        </div>
     </footer>
-    <script src="js/main.js?v=2"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

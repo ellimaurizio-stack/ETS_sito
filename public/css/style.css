@@ -18,6 +18,8 @@ body {
     margin: 0;
     padding: 0;
     color: var(--color-text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     background-color: var(--color-white);
     line-height: 1.6;
 }
@@ -43,7 +45,9 @@ nav {
     padding: 1.5rem 5%;
     background-color: var(--color-gradient-top);
     width: auto;
-    z-index: 100;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .logo {
@@ -82,9 +86,8 @@ nav {
     cursor: pointer;
 }
 
-/* --- HERO SECTIONS --- */
 .hero {
-    background: linear-gradient(to bottom, var(--color-gradient-top) 0%, var(--color-gradient-mid) 50%, var(--color-white) 100%);
+    background: linear-gradient(to bottom, var(--color-gradient-top) 0%, var(--color-gradient-mid) 45%, var(--color-white) 90%);
     padding: 12rem 5% 5rem 5%;
     text-align: center;
     color: var(--color-white);
@@ -540,4 +543,67 @@ footer {
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+/* Project Grid Styles */
+.project-grid-item {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.project-grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    display: block;
+}
+.project-grid-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: var(--color-light-blue);
+    mix-blend-mode: color;
+    opacity: 1;
+    transition: opacity 0.4s ease;
+    z-index: 2;
+}
+.project-grid-overlay::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: var(--color-light-blue);
+    opacity: 0.3;
+    transition: opacity 0.4s ease;
+}
+.project-grid-item:hover .project-grid-overlay,
+.project-grid-item:hover .project-grid-overlay::after {
+    opacity: 0;
+}
+.project-grid-item:hover img {
+    transform: scale(1.05);
+}
+
+.projects-grid .project-grid-item {
+    border-radius: 0;
+    box-shadow: none;
+    aspect-ratio: auto;
+    height: 400px; /* Or whatever height looks good for a 3-column full-width grid. Let's rely on aspect-ratio or height */
+}
+@media (min-width: 1200px) {
+    .projects-grid .project-grid-item {
+        height: 35vw;
+    }
+}
+@media (max-width: 1199px) {
+    .projects-grid .project-grid-item {
+        height: 50vw;
+    }
+}
+@media (max-width: 768px) {
+    .projects-grid .project-grid-item {
+        height: 100vw;
+    }
 }

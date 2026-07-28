@@ -8,7 +8,9 @@
 </head>
 <body>
     <nav>
-        <div class="logo"><img src="img/ets-logo-navbar.png" alt="e-ts" style="max-height: 40px;"></div>
+        <div class="logo">
+            <img src="img/ets-logo-navbar.png" alt="e-ts" style="max-height: 40px;">
+        </div>
         <div class="menu-toggle">&#9776;</div>
         <ul class="nav-links">
             <li><a href="index.html">HOME</a></li>
@@ -18,39 +20,38 @@
             <li><a href="contatti.html">CONTATTI</a></li>
         </ul>
     </nav>
-
-    <header style="background: var(--color-gradient-top); color: white; padding: 10rem 5% 15rem 5%; display: flex; flex-wrap: wrap; gap: 2rem; position: relative;">
+    <main><header style="background: var(--color-gradient-top); color: white; padding: 10rem 5% 15rem 5%; display: flex; flex-wrap: wrap; gap: 2rem; position: relative;">
         <div style="flex: 1; min-width: 300px;">
             <h1 style="font-weight: 300; font-size: 6rem; margin: 0; color: white; border-bottom: 2px solid white; padding-bottom: 10px; display: inline-block; line-height: 1;">Sostienici</h1>
         </div>
-        <div style="flex: 1; min-width: 300px; font-weight: 300; font-size: 1.1rem; line-height: 1.6; display: flex; align-items: flex-end;">
-            <p style="margin: 0; max-width: 450px;">Siamo sempre in cerca di realtà con le quali collaborare per mettere gratuitamente a loro disposizione competenze, tempo e denaro per dar vita a progetti con finalità di solidarietà sociale a favore dei più svantaggiati.</p>
+        <div style="flex: 1; min-width: 300px; font-weight: 300; font-size: 1.1rem; line-height: 1.6; display: flex; align-items: flex-start; margin-top: 5.2rem;">
+            <p style="margin: 0; max-width: 850px;">Siamo sempre <strong>in cerca di realtà con le quali collaborare</strong> per mettere gratuitamente a loro disposizione competenze, tempo e denaro per dar vita a progetti con finalità di solidarietà sociale a favore dei più svantaggiati.</p>
         </div>
     </header>
 
     <main>
-        <div style="padding: 0 5% 4rem 5%; margin-top: -10rem; position: relative; z-index: 10;">
-            <img src="img/sostienici-hero.jpg" alt="Sostienici" style="width: 100%; max-width: 1200px; margin-left: 0; height: auto; display: block; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+        <div style="padding: 0 5% 4rem 0; margin-top: -10rem; position: relative; z-index: 10;">
+            <img src="img/sostienici-hero.jpg" alt="Sostienici" style="width: 100%; max-width: 1500px; margin-left: 0; height: auto; display: block; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
         </div>
 
         <section class="flex-section text-left" style="margin-top: 5rem;">
             <div style="flex: 1;">
                 <div class="section-header" style="margin-bottom: 0;">
                     <h2 style="font-weight: 300; font-size: 3.5rem; letter-spacing: 1px; color: var(--color-text);">Sostienici con una</h2>
-                    <h2 style="font-weight: 700; font-size: 3.5rem; letter-spacing: 25px; color: var(--color-light-blue); margin-top: -10px;">DONAZIONE</h2>
+                    <h2 style="font-weight: 700; font-size: 3.5rem; letter-spacing: 25px; color: var(--color-light-blue); margin-top: -10px; border-bottom: 2px solid var(--color-text); padding-bottom: 10px; display: inline-block;">DONAZIONE</h2>
                 </div>
             </div>
-            <div style="flex: 1; font-size: 1.1rem; line-height: 1.8; color: var(--color-text); padding-top: 1rem;">
+            <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; margin-top: 4.5rem; font-size: 1.1rem; line-height: 1.8; color: var(--color-text);">
                 <p>Anche il tuo contributo può fare la differenza. Se desideri sostenere i nostri progetti e iniziative puoi effettuare una donazione tramite bonifico bancario.</p>
                 <p style="margin: 1.5rem 0; color: var(--color-light-blue); font-weight: 700;">IBAN: [INSERIRE IBAN]</p>
                 <p>Ogni donazione, grande o piccola, ci aiuta a sviluppare nuovi progetti di valore. Grazie per il tuo sostegno e per scegliere di essere parte del cambiamento.</p>
             </div>
         </section>
 
-        <section class="text-left" style="max-width: 1200px; padding: 5rem 5%;">
+        <section class="text-left" style="max-width: 1500px; padding: 5rem 5%;">
             <div class="section-header" style="margin-bottom: 2rem;">
                 <h2 style="font-weight: 300; font-size: 3.5rem; letter-spacing: 1px; color: var(--color-text);">Come donare il</h2>
-                <h2 style="font-weight: 700; font-size: 4rem; letter-spacing: 40px; color: var(--color-light-blue); margin-top: -10px;">5x1000</h2>
+                <h2 style="font-weight: 700; font-size: 4rem; letter-spacing: 40px; color: var(--color-light-blue); margin-top: -10px; border-bottom: 2px solid var(--color-text); padding-bottom: 10px; display: inline-block;">5x1000</h2>
             </div>
             <p style="margin-bottom: 4rem; max-width: 800px; color: var(--color-text); font-size: 1.1rem; line-height: 1.6;">Nel modulo della dichiarazione dei redditi (730, CUD, Unico) trovi il riquadro per la "SCELTA PER LA DESTINAZIONE CINQUE PER MILLE DELL'IRPEF".</p>
             
@@ -79,25 +80,55 @@
             </div>
         </section>
 
-        <section class="text-center" style="max-width: 100%; padding: 5rem 10%;">
+        <section class="bg-gradient-blue text-center" style="max-width: 100%; padding: 5rem 10%;">
             <div class="section-header">
                 <h2 style="font-size: 3rem;">Chi fa del bene<br>lascia un'impronta</h2>
             </div>
-            <p style="margin-bottom: 2rem;">Unirsi a noi significa scegliere di lasciare un'impronta che non sia solo visibile, ma anche significativa e duratura.</p>
-            <a href="progetti.html" class="btn">SCOPRI I PROGETTI</a>
+            <p style="margin-bottom: 2rem;">Unirsi a noi significa scegliere di <strong>lasciare un'impronta</strong> che non sia solo visibile, ma anche <strong>significativa e duratura</strong>.</p>
+            
+            <div class="partners-grid" style="margin-bottom: 4rem; max-width: 1200px; margin-left: auto; margin-right: auto; padding: 0 5%;">
+                <img src="img/progetto-1.png" style="width: 100%; max-height: 100px; object-fit: contain;">
+                <img src="img/progetto-2.png" style="width: 100%; max-height: 100px; object-fit: contain;">
+                <img src="img/progetto-1.png" style="width: 100%; max-height: 100px; object-fit: contain;">
+                <img src="img/progetto-2.png" style="width: 100%; max-height: 100px; object-fit: contain;">
+                <img src="img/progetto-1.png" style="width: 100%; max-height: 100px; object-fit: contain;">
+                <img src="img/progetto-2.png" style="width: 100%; max-height: 100px; object-fit: contain;">
+                <img src="img/progetto-1.png" style="width: 100%; max-height: 100px; object-fit: contain;">
+                <img src="img/progetto-2.png" style="width: 100%; max-height: 100px; object-fit: contain;">
+            </div>
+            <a href="progetti.html" class="btn" style="background-color: var(--color-light-blue); color: white;">SCOPRI I PROGETTI</a>
         </section>
     </main>
-
+    </main>
     <footer>
         <div class="footer-content">
-            <div class="footer-title"><p>Hai bisogno di aiuto?</p><h3>Contattaci</h3></div>
-            <div class="footer-col"><h4>Seguici su:</h4><p><img src="img/facebook.png" alt="Facebook" style="height: 24px; margin-right: 10px;"> <img src="img/In.png" alt="LinkedIn" style="height: 24px;"></p></div>
-            <div class="footer-col"><h4>MILANO</h4><p>Corso Buenos Aires, 77</p></div>
-            <div class="footer-col"><h4>A-Tono E.T.S.</h4><p>ets.a-tono.com</p></div>
-            <div class="footer-col"><h4>Codice Fiscale</h4><p>97737800157</p></div>
-            <div class="footer-logo"><img src="img/ets-logo-navbar.png" alt="e-ts" style="max-height: 50px;"></div>
+            <div class="footer-title">
+                <p>Hai bisogno di aiuto?</p>
+                <h3>Contattaci</h3>
+            </div>
+            <div class="footer-col">
+                <h4>Seguici su:</h4>
+                <p><img src="img/facebook.png" alt="Facebook" style="height: 24px; margin-right: 10px;"> <img src="img/In.png" alt="LinkedIn" style="height: 24px;"></p>
+            </div>
+            <div class="footer-col">
+                <h4>MILANO</h4>
+                <p>Corso Buenos Aires, 77<br>20124 (MI)</p>
+            </div>
+            <div class="footer-col">
+                <h4>A-Tono E.T.S.</h4>
+                <p>ets.a-tono.com<br>Ente del terzo settore</p>
+            </div>
+            <div class="footer-col">
+                <h4>Codice Fiscale</h4>
+                <p>97737800157</p>
+            </div>
+            <div class="footer-logo">
+                <img src="img/ets-logo-navbar.png" alt="e-ts" style="max-height: 50px;">
+            </div>
         </div>
-        <div class="footer-bottom">A-Tono E.T.S. - Ente del terzo settore - Codice Fiscale 97737800157</div>
+        <div class="footer-bottom">
+            A-Tono E.T.S. - Ente del terzo settore - Codice Fiscale 97737800157
+        </div>
     </footer>
     <script src="js/main.js"></script>
 </body>

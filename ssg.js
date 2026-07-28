@@ -70,15 +70,21 @@ function wrapHtml(title, mainContent, activeSlug) {
 // Generatori dei Blocchi
 const blockGenerators = {
     hero: (content) => `
-    <header class="hero" style="min-height: 80vh; padding: 2rem 5% 5rem 5%; justify-content: flex-end; align-items: center; position: relative;">
-        <div style="width: 100%; max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: left;">
-            <div style="font-size: 8rem; font-style: italic; font-weight: 300; line-height: 1; letter-spacing: -2px;">
-                <div style="padding-right: 15rem; opacity: 0.9;">${content.title_top} <span style="font-weight: 100;">${content.title_top_span}</span></div>
-                <div style="padding-left: 5rem; opacity: 0.9;">${content.title_bottom} <span style="font-weight: 100;">${content.title_bottom_span}</span></div>
+    <header class="hero" style="min-height: 60vh; padding: 10rem 5% 6rem 5%; justify-content: center; align-items: center; position: relative;">
+        <div style="width: 100%; max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center;">
+            <div style="font-size: 11rem; font-style: italic; line-height: 1; letter-spacing: -2px; color: white;">
+                <div>
+                    <span style="opacity: 0.4; font-weight: 300;">${content.title_top}</span> 
+                    <span style="opacity: 1; font-weight: 300;">${content.title_top_span}</span>
+                </div>
+                <div>
+                    <span style="opacity: 0.4; font-weight: 300;">${content.title_bottom}</span> 
+                    <span style="opacity: 1; font-weight: 300;">${content.title_bottom_span}</span>
+                </div>
             </div>
-            <div style="display: flex; align-items: center; gap: 4rem; margin-top: 6rem; width: 100%; max-width: 900px;">
-                <div style="flex: 1; height: 2px; background: white; opacity: 0.8;"></div>
-                <div style="flex: 1; text-align: left; font-size: 1.1rem; font-weight: 300; line-height: 1.6;">
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 2rem; margin-top: 6rem; width: 100%; max-width: 900px;">
+                <div style="width: 150px; height: 2px; background: var(--color-light-blue);"></div>
+                <div style="text-align: center; font-size: 1.4rem; font-weight: 700; line-height: 1.6; color: var(--color-light-blue);">
                     ${content.description}
                 </div>
             </div>
@@ -156,8 +162,16 @@ const blockGenerators = {
         </div>
         
         <div class="text-center" style="margin-top: 4rem; width: 100%;">
-            <div class="partners-grid" style="margin-bottom: 4rem; max-width: 1200px; margin-left: auto; margin-right: auto; padding: 0 5%;">
-                ${(content.logos || []).map(logo => `<img src="${logo.replace('public/', '')}" style="width: 100%; max-height: 100px; object-fit: contain;">`).join('')}
+            <div class="partners-grid" style="margin-bottom: 4rem; max-width: 1200px; margin-left: auto; margin-right: auto; padding: 0 5%; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.5rem;">
+                ${(content.logos || []).map(logo => {
+                    let match = logo.match(/progetto-(\d+)\.jpg/);
+                    let link = match ? (match[1] === '19' ? 'progetto-bullone.html' : `progetto-${match[1]}.html`) : '#';
+                    return `
+                    <a href="${link}" class="project-grid-item">
+                        <img src="${logo.replace('public/', '')}" alt="Progetto">
+                        <div class="project-grid-overlay"></div>
+                    </a>
+                `}).join('')}
             </div>
             ${content.button_text ? `<a href="${content.button_link}" class="btn" style="padding: 15px 40px; background-color: var(--color-light-blue);">${content.button_text}</a>` : ''}
         </div>
