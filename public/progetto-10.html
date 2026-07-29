@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A-Tono ETS - Dettaglio Progetto</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>A-Tono ETS - Progetto</title>
+    <link rel="stylesheet" href="css/style.css?v=1785338175098">
     <style>
         .project-hero {
             position: relative;
-            background-size: cover;
-            background-position: center;
+            background-color: #e0e0e0;
             min-height: 50vh;
             display: flex;
             align-items: center;
@@ -20,7 +19,7 @@
             content: '';
             position: absolute;
             top:0; left:0; right:0; bottom:0;
-            background: rgba(23, 44, 74, 0.7); /* Blu scuro in overlay */
+            background: rgba(23, 44, 74, 0.7);
             z-index: 1;
         }
         .project-hero-content {
@@ -41,24 +40,21 @@
             height: 100px;
             background: white;
         }
-        .project-title-section {
-            display: flex;
-            gap: 4rem;
-            margin-top: -3rem; /* Per avvicinarlo all'header come da design */
-        }
-        .project-title-left { flex: 1; }
-        .project-title-right { flex: 1; font-weight: 300; }
-        
         .image-gallery-3 {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 1rem;
             margin: 4rem 0;
         }
-        .image-gallery-3 img {
+        .image-gallery-3 .placeholder-img {
             width: 100%;
-            height: auto;
-            object-fit: cover;
+            aspect-ratio: 1 / 1;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 0.9rem;
         }
         .main-content {
             font-size: 1rem;
@@ -76,12 +72,14 @@
 </head>
 <body>
     <nav>
-        <div class="logo"><img src="img/ets-logo-navbar.png" alt="e-ts" style="max-height: 40px;"></div>
+        <div class="logo">
+            <img src="img/ets-logo-navbar.png" alt="e-ts" style="max-height: 40px;">
+        </div>
         <div class="menu-toggle">&#9776;</div>
         <ul class="nav-links">
             <li><a href="index.html">HOME</a></li>
             <li><a href="chi-siamo.html">CHI SIAMO</a></li>
-            <li><a href="progetti.html">PROGETTI</a></li>
+            <li><a href="progetti.html" class="active">PROGETTI</a></li>
             <li><a href="sostienici.html">SOSTIENICI</a></li>
             <li><a href="contatti.html">CONTATTI</a></li>
         </ul>
@@ -89,8 +87,8 @@
 
     <header class="project-hero" id="hero_section">
         <div class="project-hero-content" style="display: flex; align-items: center; justify-content: center; gap: 3rem; width: 100%;">
-            <div style="flex: 1; text-align: right;">
-                <img id="partner_logo" src="" alt="Partner Logo" style="max-height: 80px; width: auto;">
+            <div style="flex: 1; text-align: right; color: white;">
+                [LOGO PARTNER]
             </div>
             <div class="separator" style="width: 1px; height: 120px; background: white;"></div>
             <div style="flex: 1; text-align: left;">
@@ -104,26 +102,35 @@
             <section class="flex-section text-left" style="margin-top: 5rem; max-width: 1200px; margin-left: auto; margin-right: auto; padding: 0 5% 6rem 5%;">
                 <div style="flex: 1;">
                     <div class="section-header" style="margin-bottom: 0;">
-                        <h2 id="partner_name" style="font-weight: 300; font-size: 3.5rem; letter-spacing: 1px; color: var(--color-text); margin: 0; line-height: 1;">Fondazione</h2>
-                        <h2 id="project_name" style="font-weight: 700; font-size: 4rem; letter-spacing: 15px; color: var(--color-light-blue); margin-top: 10px; border-bottom: 2px solid var(--color-text); padding-bottom: 15px; display: inline-block;">IL BULLONE</h2>
+                        <h2 id="partner_name" style="font-weight: 300; font-size: 2.5rem; letter-spacing: 1px; color: var(--color-text); margin: 0; line-height: 1;">[SOTTOTITOLO]</h2>
+                        <h2 id="project_name" style="font-weight: 700; font-size: 3.5rem; letter-spacing: 5px; color: var(--color-light-blue); margin-top: 10px; border-bottom: 2px solid var(--color-text); padding-bottom: 15px; display: inline-block; word-break: break-word;">[NOME PROGETTO]</h2>
                     </div>
                 </div>
                 <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: flex-start;">
                     <p id="intro_text" style="margin: 0; font-size: 1.1rem; line-height: 1.8; color: var(--color-text);">
-                        Testo introduttivo del progetto...
+                        [Questo è lo spazio per il testo introduttivo. Verrà posizionato affianco al titolo e alla linea, esattamente come nella struttura di riferimento.]
                     </p>
                 </div>
             </section>
 
-            <!-- Prima griglia di immagini (immagini 1,2,3) -->
-            <div class="image-gallery-3" id="gallery_top" style="max-width: 1200px; margin: 0 auto 4rem auto; padding: 0 5%;"></div>
-
-            <div class="main-content" id="main_content" style="max-width: 900px; padding: 0 5%;">
-                <!-- Il testo lungo verrà inserito qui -->
+            <!-- Prima griglia di immagini -->
+            <div class="image-gallery-3" id="gallery_top" style="max-width: 1200px; margin: 0 auto 4rem auto; padding: 0 5%;">
+                <div class="placeholder-img">[Immagine]</div>
+                <div class="placeholder-img">[Immagine]</div>
+                <div class="placeholder-img">[Immagine]</div>
             </div>
 
-            <!-- Seconda griglia di immagini (immagini 4,5,6) -->
-            <div class="image-gallery-3" id="gallery_bottom" style="max-width: 1200px; margin: 4rem auto; padding: 0 5%;"></div>
+            <div class="main-content" id="main_content" style="max-width: 900px; padding: 0 5%; color: var(--color-text);">
+                <h3>[TITOLO BLOCCO PRINCIPALE]</h3>
+                <p>[Testo principale del progetto. Qui andranno inseriti i dettagli, le descrizioni delle attività e ogni altra informazione fornita tramite il foglio Excel.]</p>
+            </div>
+
+            <!-- Seconda griglia di immagini (opzionale) -->
+            <div class="image-gallery-3" id="gallery_bottom" style="max-width: 1200px; margin: 4rem auto; padding: 0 5%;">
+                <div class="placeholder-img">[Immagine]</div>
+                <div class="placeholder-img">[Immagine]</div>
+                <div class="placeholder-img">[Immagine]</div>
+            </div>
 
             <div class="text-center" style="margin-top: 5rem; padding-bottom: 5rem;">
                 <a href="progetti.html" class="btn" style="background-color: var(--color-light-blue); color: white; border-radius: 30px; padding: 15px 40px; font-weight: 500; font-size: 1rem;">TORNA AI PROGETTI</a>
@@ -133,8 +140,10 @@
 
     <footer>
         <div class="footer-content">
-            <div class="footer-title"><p>Hai bisogno di aiuto?</p><h3>Contattaci</h3></div>
-            <div class="footer-col"><h4>Seguici su:</h4><p><img src="img/facebook.png" alt="Facebook" style="height: 24px; margin-right: 10px;"> <img src="img/In.png" alt="LinkedIn" style="height: 24px;"></p></div>
+            <div class="footer-col">
+                <h4 style="color: var(--color-light-blue); font-size: 1.1rem; text-transform: uppercase; margin-bottom: 8px;">Hai bisogno di aiuto?</h4>
+                <p style="margin-top: 0;"><a href="contatti.html" style="color: inherit; text-decoration: none; font-weight: bold; font-size: 1.2rem; border-bottom: 2px solid currentColor;">Contattaci</a></p>
+            </div>
             <div class="footer-col"><h4>MILANO</h4><p>Corso Buenos Aires, 77</p></div>
             <div class="footer-col"><h4>A-Tono E.T.S.</h4><p>ets.a-tono.com</p></div>
             <div class="footer-col"><h4>Codice Fiscale</h4><p>97737800157</p></div>
@@ -142,6 +151,6 @@
         </div>
         <div class="footer-bottom">A-Tono E.T.S. - Ente del terzo settore - Codice Fiscale 97737800157</div>
     </footer>
-    <script src="js/progetto.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

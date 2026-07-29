@@ -1,0 +1,142 @@
+{
+  "1": {
+    "nome": "Progetto Grazia",
+    "sottotitolo": "Progetto",
+    "titolo": "GRAZIA",
+    "testo": "Abbiamo sostenuto un’associazione impegnata nella ricerca sul morbo di Krabbe, contribuendo alla sensibilizzazione e alla raccolta fondi attraverso la realizzazione di uno stand, gadget brandizzati e un minisito dedicato alla presenza dell’associazione al Lennon Festival.",
+    "clickable": false
+  },
+  "2": {
+    "nome": "Le parole di Lulù",
+    "sottotitolo": "Le parole di Lulù",
+    "titolo": "SOS Bimbi",
+    "testo": "Abbiamo sostenuto Le parole di Lulù – SOS Bimbi, contribuendo a un progetto dedicato all’aiuto e al sostegno dei bambini e delle famiglie in situazioni di difficoltà.",
+    "clickable": false
+  },
+  "3": {
+    "nome": "Comunità Oklahoma Onlus",
+    "sottotitolo": "Comunità Oklahoma Onlus",
+    "titolo": "La cucina di Albert",
+    "testo": "Abbiamo aiutato Comunità Oklahoma Onlus a creare La cucina di Albert, un laboratorio per avvicinare i minori dell'associazione alla cucina, favorendo il loro ingresso nel mercato del lavoro.",
+    "clickable": false
+  },
+  "4": {
+    "nome": "Zia Caterina",
+    "sottotitolo": "Volontariato",
+    "titolo": "Zia Caterina",
+    "testo": "Abbiamo affiancato Zia Caterina in un percorso di solidarietà e impegno sociale, offrendo il nostro contributo a una realtà che ogni giorno porta aiuto e speranza.",
+    "clickable": false
+  },
+  "5": {
+    "nome": "Un sacco di bene",
+    "sottotitolo": "Un sacco",
+    "titolo": "DI BENE",
+    "testo": "Durante l’emergenza Coronavirus abbiamo sostenuto concretamente l’Ospedale Luigi Sacco di Milano, devolvendo parte del margine delle operazioni di pagamento effettuate tramite gli esercenti DropPoint® per supportare la struttura sanitaria.",
+    "clickable": false
+  },
+  "6": {
+    "nome": "Andos",
+    "sottotitolo": "Al fianco delle donne",
+    "titolo": "ANDOS",
+    "testo": "Abbiamo contribuito all'acquisto di una fornitura annuale di lastre per la mammografia, aiutando così ANDOS nel suo lavoro di prevenzione dei tumori al seno.",
+    "clickable": false
+  },
+  "7": {
+    "nome": "Talità Kum​",
+    "sottotitolo": "Volontariato",
+    "titolo": "Talità Kum​",
+    "testo": "Abbiamo sostenuto una realtà di volontariato attiva in un quartiere difficile della periferia di Catania, donando quattro computer portatili destinati ai ragazzi e alle attività educative.",
+    "clickable": false
+  },
+  "8": {
+    "nome": "Humanitas",
+    "sottotitolo": "Fatti coraggio papà",
+    "titolo": "Humanitas",
+    "testo": "Abbiamo realizzato per Fondazione Humanitas una campagna per riportare al centro l'importanza dei controllo periodici e della ricerca durante il mese dedicato alla prevenzione maschile, creando una challenge social per convincere gli uomini a fare esami periodici.",
+    "clickable": false
+  },
+  "9": {
+    "nome": "Un Cuore Un Mondo",
+    "sottotitolo": "Un Cuore",
+    "titolo": "Un Mondo",
+    "testo": "Un progetto di rebranding e comunicazione sociale nato per dare maggiore visibilità all'associazione e sensibilizzare il pubblico sulle cardiopatie congenite pediatriche.",
+    "clickable": true
+  },
+  "10": {
+    "nome": "NoWalls",
+    "sottotitolo": "Prima l'italiano",
+    "titolo": "NoWalls",
+    "testo": "Abbiamo realizzato la campagna di NoWalls, non-profit nata per insegnare l'italiano e fornire supporti ai migranti, sensibilizzando sul tema dell'immigrazione e aiutando a reclutare nuovi insegnanti per i corsi dell'associazione.",
+    "clickable": false
+  },
+  "11": {
+    "nome": "Libellule",
+    "sottotitolo": "Rinascere insieme",
+    "titolo": "LIBELLULE AMICHE",
+    "testo": "Per Libellule Onlus abbiamo curato il rebranding dell'associazione, rinnovandone l'identità visiva e gli strumenti di comunicazione. In occasione dell'inaugurazione del nuovo centro abbiamo ideato una campagna di awareness con un volantino interattivo che, grazie a un segno grafico e a un QR Code per le donazioni, coinvolgeva il pubblico in un gesto simbolico per sensibilizzare sulla prevenzione del tumore al seno.",
+    "clickable": false
+  },
+  "12": {
+    "nome": "Amici della Clinica ",
+    "sottotitolo": "Concerto di beneficenza",
+    "titolo": "Amici della Clinica ",
+    "testo": "Per il secondo anno consecutivo abbiamo sostenuto il concerto di beneficenza organizzato in memoria del nostro collega Giuseppe Caspani, affiancando un'iniziativa che unisce musica, solidarietà e ricerca. L'evento, realizzato con la partecipazione dei Maestri della Scala di Milano, ha raccolto fondi a favore dell'Experimental Neurosurgery and Cell Therapy Laboratory del Policlinico di Milano.",
+    "clickable": false
+  },
+  "13": {
+    "nome": "Kayros",
+    "sottotitolo": "Non esistono ragazzi cattivi",
+    "titolo": "KAYROS",
+    "testo": "Un percorso di rebranding che unisce strategia, creatività e comunicazione per dare maggiore forza e riconoscibilità alla realtà di Kayros.",
+    "clickable": true
+  },
+  "14": {
+    "nome": "AOPI Trivella",
+    "sottotitolo": "Realizzazione sito",
+    "titolo": "AOPI Trivella",
+    "testo": "Abbiamo riprogettato il sito web dell'Associazione Oncologica Pisana Piero Trivella, creando una piattaforma più moderna, accessibile e intuitiva per valorizzarne le attività e facilitare l'accesso a servizi, informazioni e iniziative dedicate ai pazienti oncologici, alle loro famiglie e ai volontari.",
+    "clickable": false
+  },
+  "15": {
+    "nome": "Manager no profit",
+    "sottotitolo": "Rebranding",
+    "titolo": "Manager no profit",
+    "testo": "Abbiamo curato il rebranding grafico di Manager No Profit, sviluppando una nuova identità visiva capace di rappresentare in modo più contemporaneo la realtà dell'associazione. Un restyling studiato per rafforzarne il posizionamento e rendere la comunicazione più riconoscibile, coerente e vicina ai valori del Terzo Settore.",
+    "clickable": false
+  },
+  "16": {
+    "nome": "Restart Romagna",
+    "sottotitolo": "Campagna",
+    "titolo": "Re-start Romagna",
+    "testo": "DropTicket solidale: donati 5000 Euro alla Protezione Civile grazie alla Campagna \"Re-Start Romagna\"",
+    "clickable": true
+  },
+  "17": {
+    "nome": "Cabina Rosa",
+    "sottotitolo": "Installazione urbana",
+    "titolo": "CABINA ROSA",
+    "testo": "In occasione della Giornata internazionale per l’eliminazione della violenza contro le donne, il 25 novembre, in CityLife a Milano abbiamo creato un'installazione urbana, Cabina Rosa.",
+    "clickable": true
+  },
+  "18": {
+    "nome": "MUDEC",
+    "sottotitolo": "MUDEC Gala",
+    "titolo": "The Art of Giving",
+    "testo": "Venerdì 3 ottobre 2025, nella cornice del MUDEC - Museo delle Culture di Milano, A-Tono ETS ha firmato il suo debutto pubblico con il Gala “The Art of Giving”. ",
+    "clickable": true
+  },
+  "19": {
+    "nome": "Bullone",
+    "sottotitolo": "Fondazione",
+    "titolo": "IL BULLONE",
+    "testo": "Con loro abbiamo ideato e lanciato la nuova campagna digital di raccolta fondi individui della Fondazione. Un progetto che parla di rinascita, coraggio e comunicazione come strumento di cambiamento reale.",
+    "clickable": true
+  },
+  "20": {
+    "nome": "Partizan",
+    "sottotitolo": "A-Tono",
+    "titolo": "PARTIZAN",
+    "testo": "A-Tono ETS è diventata anche una Società Sportiva, affiliata al C.S.I. – Centro Sportivo Italiano. Un passo naturale, per restituire, nel modo più concreto possibile, un po’ del nostro valore alla società.",
+    "clickable": true
+  }
+}

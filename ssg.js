@@ -162,16 +162,40 @@ const blockGenerators = {
         </div>
         
         <div class="text-center" style="margin-top: 4rem; width: 100%;">
-            <div class="partners-grid" style="margin-bottom: 4rem; max-width: 1200px; margin-left: auto; margin-right: auto; padding: 0 5%; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.5rem;">
+            <div class="partners-grid" style="margin-bottom: 4rem; max-width: 1200px; margin-left: auto; margin-right: auto; padding: 0 5%; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0;">
                 ${(content.logos || []).map(logo => {
                     let match = logo.match(/progetto-(\d+)\.jpg/);
-                    let link = match ? (match[1] === '19' ? 'progetto-bullone.html' : `progetto-${match[1]}.html`) : '#';
+                    let num = match ? parseInt(match[1]) : 0;
+                    if(!num) return '';
+                    
+                    const projectsMetadata = require('./projects.json');
+                    let data = projectsMetadata[num] || { nome: '', sottotitolo: '', titolo: '', testo: '', clickable: false };
+                    
+                    let styleClass = 'hover-style-c';
+
+                    let tag = data.clickable ? 'a' : 'div';
+                    let href = data.clickable ? `href="progetto-${num}.html"` : '';
+                    
+                    let popupHtml = `
+                        <div class="project-preview-popup">
+                            <div class="popup-content">
+                                <h4 class="popup-subtitle">${data.sottotitolo}</h4>
+                                <h3 class="popup-title">${data.titolo}</h3>
+                                <div class="popup-line"></div>
+                                <p class="popup-text">${data.testo}</p>
+                                ${data.clickable ? '<span class="popup-cta">Scopri di più sul progetto &rarr;</span>' : ''}
+                            </div>
+                        </div>
+                    `;
+
                     return `
-                    <a href="${link}" class="project-grid-item">
-                        <img src="${logo.replace('public/', '')}" alt="Progetto">
+                    <${tag} ${href} class="project-grid-item ${styleClass}">
+                        <img src="${logo.replace('public/', '')}" alt="${data.nome || 'Progetto'}">
                         <div class="project-grid-overlay"></div>
-                    </a>
-                `}).join('')}
+                        ${popupHtml}
+                    </${tag}>
+                    `;
+                }).join('')}
             </div>
             ${content.button_text ? `<a href="${content.button_link}" class="btn" style="padding: 15px 40px; background-color: var(--color-light-blue);">${content.button_text}</a>` : ''}
         </div>

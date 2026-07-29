@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A-Tono ETS - Dettaglio Progetto</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>MUDEC | A-Tono ETS</title>
+    <link rel="stylesheet" href="css/style.css?v=1785338175102">
     <style>
         .project-hero {
             position: relative;
-            background-size: cover;
-            background-position: center;
+            background-color: #e0e0e0;
             min-height: 50vh;
             display: flex;
             align-items: center;
@@ -20,7 +19,7 @@
             content: '';
             position: absolute;
             top:0; left:0; right:0; bottom:0;
-            background: rgba(23, 44, 74, 0.7); /* Blu scuro in overlay */
+            background: rgba(23, 44, 74, 0.7);
             z-index: 1;
         }
         .project-hero-content {
@@ -41,24 +40,21 @@
             height: 100px;
             background: white;
         }
-        .project-title-section {
-            display: flex;
-            gap: 4rem;
-            margin-top: -3rem; /* Per avvicinarlo all'header come da design */
-        }
-        .project-title-left { flex: 1; }
-        .project-title-right { flex: 1; font-weight: 300; }
-        
         .image-gallery-3 {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 1rem;
             margin: 4rem 0;
         }
-        .image-gallery-3 img {
+        .image-gallery-3 .placeholder-img {
             width: 100%;
-            height: auto;
-            object-fit: cover;
+            aspect-ratio: 1 / 1;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 0.9rem;
         }
         .main-content {
             font-size: 1rem;
@@ -76,65 +72,83 @@
 </head>
 <body>
     <nav>
-        <div class="logo"><img src="img/ets-logo-navbar.png" alt="e-ts" style="max-height: 40px;"></div>
+        <div class="logo">
+            <img src="img/ets-logo-navbar.png" alt="e-ts" style="max-height: 40px;">
+        </div>
         <div class="menu-toggle">&#9776;</div>
         <ul class="nav-links">
             <li><a href="index.html">HOME</a></li>
             <li><a href="chi-siamo.html">CHI SIAMO</a></li>
-            <li><a href="progetti.html">PROGETTI</a></li>
+            <li><a href="progetti.html" class="active">PROGETTI</a></li>
             <li><a href="sostienici.html">SOSTIENICI</a></li>
             <li><a href="contatti.html">CONTATTI</a></li>
         </ul>
     </nav>
 
-    <header class="project-hero" id="hero_section">
-        <div class="project-hero-content" style="display: flex; align-items: center; justify-content: center; gap: 3rem; width: 100%;">
-            <div style="flex: 1; text-align: right;">
-                <img id="partner_logo" src="" alt="Partner Logo" style="max-height: 80px; width: auto;">
-            </div>
-            <div class="separator" style="width: 1px; height: 120px; background: white;"></div>
-            <div style="flex: 1; text-align: left;">
-                <img src="img/ets-logo-navbar.png" alt="e-ts" style="max-height: 60px;">
-            </div>
-        </div>
-    </header>
+    
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <main>
-        <section>
-            <section class="flex-section text-left" style="margin-top: 5rem; max-width: 1200px; margin-left: auto; margin-right: auto; padding: 0 5% 6rem 5%;">
-                <div style="flex: 1;">
-                    <div class="section-header" style="margin-bottom: 0;">
-                        <h2 id="partner_name" style="font-weight: 300; font-size: 3.5rem; letter-spacing: 1px; color: var(--color-text); margin: 0; line-height: 1;">Fondazione</h2>
-                        <h2 id="project_name" style="font-weight: 700; font-size: 4rem; letter-spacing: 15px; color: var(--color-light-blue); margin-top: 10px; border-bottom: 2px solid var(--color-text); padding-bottom: 15px; display: inline-block;">IL BULLONE</h2>
-                    </div>
-                </div>
-                <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: flex-start;">
-                    <p id="intro_text" style="margin: 0; font-size: 1.1rem; line-height: 1.8; color: var(--color-text);">
-                        Testo introduttivo del progetto...
-                    </p>
-                </div>
-            </section>
+        <header style="width: 100%; position: relative;">
+            <img src="img/mudec-header.jpg" alt="MUDEC" style="width: 100%; height: auto; display: block;">
+        </header>
 
-            <!-- Prima griglia di immagini (immagini 1,2,3) -->
-            <div class="image-gallery-3" id="gallery_top" style="max-width: 1200px; margin: 0 auto 4rem auto; padding: 0 5%;"></div>
-
-            <div class="main-content" id="main_content" style="max-width: 900px; padding: 0 5%;">
-                <!-- Il testo lungo verrà inserito qui -->
+        <section class="flex-section text-left" style="background: white; margin-top: 4rem; max-width: 1500px; margin-left: auto; margin-right: auto; padding: 0 5% 8rem 5%; color: var(--color-dark-blue); align-items: flex-start;">
+            <div style="flex: 1; padding-right: 2rem;">
+                <div class="section-header" style="margin-bottom: 0;">
+                    <h2 style="font-weight: 300; font-size: 2.5rem; letter-spacing: 1px; color: var(--color-text); margin:0;">MUDEC Gala</h2>
+                    <h2 style="font-weight: 700; font-size: 4rem; letter-spacing: 2px; color: var(--color-light-blue); margin-top: 10px; border-bottom: 2px solid var(--color-text); padding-bottom: 10px; display: inline-block; margin-bottom: 0;">The Art of Giving</h2>
+                </div>
             </div>
+            <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; font-size: 1.1rem; color: var(--color-text); margin-top: 8rem;">
+                <p style="margin: 0 0 10px 0; font-weight: 300; line-height: 1.8; max-width: 700px;">
+                    Venerdì 3 ottobre 2025, nella cornice del <strong style="color: var(--color-light-blue); font-weight: 700;">MUDEC</strong> - Museo delle Culture di Milano, <strong style="color: var(--color-light-blue); font-weight: 700;">A-Tono ETS</strong> ha firmato il suo debutto pubblico con il Gala “<strong style="color: var(--color-light-blue); font-weight: 700;">The Art of Giving</strong>”. 
+                </p>
+            </div>
+        </section>
 
-            <!-- Seconda griglia di immagini (immagini 4,5,6) -->
-            <div class="image-gallery-3" id="gallery_bottom" style="max-width: 1200px; margin: 4rem auto; padding: 0 5%;"></div>
-
-            <div class="text-center" style="margin-top: 5rem; padding-bottom: 5rem;">
-                <a href="progetti.html" class="btn" style="background-color: var(--color-light-blue); color: white; border-radius: 30px; padding: 15px 40px; font-weight: 500; font-size: 1rem;">TORNA AI PROGETTI</a>
+        <section style="max-width: 1200px; margin: 0 auto; padding: 0 5%;">
+            
+            <div style="margin-bottom: 3rem; margin-top: 2rem;">
+                <h3 style="color: var(--color-light-blue); font-size: 2rem; font-weight: 700; margin-bottom: 1rem;">Non solo un evento, ma un vero e proprio manifesto.</h3>
+                <p style="color: var(--color-text); font-size: 1.1rem; line-height: 1.8;">Un nome che racconta l’essenza della serata, capace di intrecciare arte, alta cucina e tecnologia per sostenere cause ad alto <strong style="color: var(--color-light-blue); font-weight: 700;">impatto sociale</strong>. L’idea è semplice e trasformativa: unire arte, relazione e tecnologia per tradurre la bellezza in <strong style="color: var(--color-light-blue); font-weight: 700;">impatto sociale</strong> concreto e misurabile.<br><br>Gli ospiti hanno vissuto un’esperienza fuori dall’ordinario: visita privata alla mostra M.C. Escher – L’arte e la scienza, seguita da una cena stellata firmata Enrico Bartolini, servita nell’Agorà del museo. <br><br>Il cuore della serata, però, non era nel programma, bensì nei due progetti presentati da Anastasia Granato, presidentessa di <strong style="color: var(--color-light-blue); font-weight: 700;">A-Tono ETS</strong>. Da un lato, la campagna abbonamenti “Un Bullone per rinascere” rivolta alle aziende per Il Bullone, il giornale che accompagna giovani colpiti da malattie oncologiche o autoimmuni in un percorso di <strong style="color: var(--color-light-blue); font-weight: 700;">rinascita</strong> attraverso la scrittura; dall’altro, un’installazione pubblica, “La <strong style="color: var(--color-light-blue); font-weight: 700;">Cabina Rosa</strong>”, dedicata alla <strong style="color: var(--color-light-blue); font-weight: 700;">prevenzione</strong> e al riconoscimento della <strong style="color: var(--color-light-blue); font-weight: 700;">violenza di genere</strong>, con un’azione di sensibilizzazione che promuove il <strong style="color: var(--color-light-blue); font-weight: 700;">1522</strong>, numero nazionale antiviolenza e stalking.<br><br>Come ha ricordato la presidentessa Anastasia Granato, il dono è “arte delle connessioni”: tra tasselli diversi - persone, competenze, organizzazioni - che, accostati con cura, compongono un’immagine più grande. <br> <br>A rendere “<strong style="color: var(--color-light-blue); font-weight: 700;">The Art of Giving</strong>” un modello unico nel suo genere è stata anche la tecnologia: sui tavoli infatti, i DropPOS A-Tono (terminali di pagamento contactless sviluppati dal gruppo) hanno permesso <strong style="color: var(--color-light-blue); font-weight: 700;">donazioni aggiuntive immediate</strong>, semplici e sicure, trasformando l’atto del donare in un processo più accessibile, naturale e diffuso.</p>
+            </div>
+            
+            </section>
+            <div style="margin-bottom: 6rem; margin-top: 6rem; width: 100%; display: flex; justify-content: flex-end;">
+                <img src="img/mudec-1.jpg" alt="Galleria" style="width: 90%; max-width: 1600px; height: auto; display: block; border-radius: 8px 0 0 8px;">
+            </div>
+            <section style="max-width: 1200px; margin: 0 auto; padding: 0 5%; color: var(--color-text);">
+            
+            <div style="text-align: center; margin: 6rem 0 8rem 0;">
+                <a href="progetti.html" class="btn-primary" style="background-color: var(--color-light-blue); color: white; padding: 15px 40px; text-decoration: none; font-weight: bold; font-size: 1.2rem; border-radius: 30px; text-transform: uppercase;">Torna ai progetti</a>
             </div>
         </section>
     </main>
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     <footer>
         <div class="footer-content">
-            <div class="footer-title"><p>Hai bisogno di aiuto?</p><h3>Contattaci</h3></div>
-            <div class="footer-col"><h4>Seguici su:</h4><p><img src="img/facebook.png" alt="Facebook" style="height: 24px; margin-right: 10px;"> <img src="img/In.png" alt="LinkedIn" style="height: 24px;"></p></div>
+            <div class="footer-col">
+                <h4 style="color: var(--color-light-blue); font-size: 1.1rem; text-transform: uppercase; margin-bottom: 8px;">Hai bisogno di aiuto?</h4>
+                <p style="margin-top: 0;"><a href="contatti.html" style="color: inherit; text-decoration: none; font-weight: bold; font-size: 1.2rem; border-bottom: 2px solid currentColor;">Contattaci</a></p>
+            </div>
             <div class="footer-col"><h4>MILANO</h4><p>Corso Buenos Aires, 77</p></div>
             <div class="footer-col"><h4>A-Tono E.T.S.</h4><p>ets.a-tono.com</p></div>
             <div class="footer-col"><h4>Codice Fiscale</h4><p>97737800157</p></div>
@@ -142,6 +156,6 @@
         </div>
         <div class="footer-bottom">A-Tono E.T.S. - Ente del terzo settore - Codice Fiscale 97737800157</div>
     </footer>
-    <script src="js/progetto.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
