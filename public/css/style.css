@@ -768,3 +768,57 @@ footer {
     border-bottom: 2px solid var(--color-light-blue);
     padding-bottom: 4px;
 }
+
+/* RESPONSIVE OVERRIDES FOR INLINE STYLES */
+@media (max-width: 768px) {
+    /* Typography */
+    h1 {
+        font-size: 2.5rem !important;
+        letter-spacing: 2px !important;
+    }
+    
+    h2 {
+        font-size: 2rem !important;
+        letter-spacing: 1px !important;
+        line-height: 1.2 !important;
+        word-wrap: break-word !important;
+    }
+
+    /* Fix huge letter spacings like "ETS" and "CONTATTACI" */
+    h2[style*="letter-spacing: 40px"], 
+    h2[style*="letter-spacing: 30px"],
+    h2[style*="letter-spacing: 20px"] {
+        letter-spacing: 4px !important;
+        font-size: 2.2rem !important;
+    }
+
+    /* Fix the giant quote mark */
+    div[style*="font-size: 11rem"] {
+        font-size: 5rem !important;
+    }
+
+    /* Fix paddings that are too large */
+    section, .flex-section, .bg-gradient-blue {
+        padding-left: 5% !important;
+        padding-right: 5% !important;
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+
+    /* Fix margins */
+    div[style*="margin-top: 11rem"], 
+    div[style*="margin-top: 10rem"] {
+        margin-top: 3rem !important;
+    }
+
+    div[style*="margin-top: -10rem"] {
+        margin-top: -3rem !important;
+    }
+
+    /* Make sure flex layouts stack properly */
+    .flex-section {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 2rem !important;
+    }
+}
