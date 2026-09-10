@@ -55,40 +55,4 @@ async function fetchGallery() {
     }
 }
 
-// Contact form logic
-document.addEventListener('DOMContentLoaded', () => {
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const formData = new FormData(contactForm);
-            const data = Object.fromEntries(formData.entries());
-            data.privacy_agreed = data.privacyCheck === 'on';
-            
-            const motivationSelect = document.getElementById('motivationSelect');
-            if(motivationSelect) {
-                data.motivation = motivationSelect.value;
-            }
-
-            try {
-                const response = await fetch('/api/contact', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(data)
-                });
-                
-                const result = await response.json();
-                if (response.ok) {
-                    alert('Grazie! Il tuo messaggio è stato inviato con successo.');
-                    contactForm.reset();
-                } else {
-                    alert('Errore: ' + result.error);
-                }
-            } catch (err) {
-                console.error(err);
-                alert('Errore durante l\'invio del messaggio.');
-            }
-        });
-    }
-});
+// Contact form logic removed since we use mailto HTML action now
