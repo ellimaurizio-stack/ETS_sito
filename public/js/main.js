@@ -55,4 +55,28 @@ async function fetchGallery() {
     }
 }
 
-// Contact form logic removed since we use mailto HTML action now
+// Smart mailto logic to bypass Chrome insecure form warning
+document.addEventListener('DOMContentLoaded', () => {
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault(); // Blocca l'invio nativo per evitare l'avviso di Chrome
+            
+            const name = document.querySelector('input[name="name"]').value;
+            const email = document.querySelector('input[name="email"]').value;
+            const phone = document.querySelector('input[name="phone"]').value;
+            const message = document.querySelector('textarea[name="message"]').value;
+            
+            const subject = encodeURIComponent("Nuovo messaggio dal sito ETS da " + name);
+            const body = encodeURIComponent(
+                "Nome: " + name + "\n" +
+                "Email: " + email + "\n" +
+                "Telefono: " + phone + "\n\n" +
+                "Messaggio:\n" + message
+            );
+            
+            // Lancia l'apertura della mail in modo sicuro
+            window.location.href = "mailto:ets@a-tono.com?subject=" + subject + "&body=" + body;
+        });
+    }
+});
