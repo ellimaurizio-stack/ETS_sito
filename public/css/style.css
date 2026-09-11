@@ -864,4 +864,32 @@ footer {
     .manifesto-grid > div > div:last-child {
         max-width: 100% !important;
     }
+
+    /* Trasforma il popup dei progetti in un Modale centrato su mobile */
+    .hover-style-c .project-preview-popup {
+        position: fixed !important;
+        top: 50% !important;
+        left: 50% !important;
+        bottom: auto !important;
+        right: auto !important;
+        width: 90vw !important;
+        transform: translate(-50%, -40%) scale(0.9) !important;
+        opacity: 0 !important;
+        transition: all 0.3s ease !important;
+        z-index: 99999 !important;
+    }
+    
+    .hover-style-c:hover .project-preview-popup {
+        transform: translate(-50%, -50%) scale(1) !important;
+        opacity: 1 !important;
+    }
+
+    .hover-style-c .popup-content {
+        background: rgba(23, 44, 74, 0.98) !important;
+        border-radius: 15px !important;
+        padding: 2rem !important;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.8) !important;
+        text-align: center !important;
+        border: 1px solid rgba(255,255,255,0.1) !important;
+    }
 }
