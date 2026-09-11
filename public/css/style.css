@@ -882,6 +882,7 @@ footer {
     .hover-style-c:hover .project-preview-popup {
         transform: translate(-50%, -50%) scale(1) !important;
         opacity: 1 !important;
+        pointer-events: auto !important;
     }
 
     .hover-style-c .popup-content {
