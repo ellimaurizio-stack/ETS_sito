@@ -500,6 +500,19 @@ footer {
         text-align: center !important;
     }
 
+    /* Inverti ordine su mobile per N.2 */
+    .step-item:nth-child(2) > div:first-child {
+        order: 2;
+    }
+    .step-item:nth-child(2) > div:last-child {
+        order: 1;
+    }
+    
+    /* Riduci font size dei numeri */
+    .step-item > div[style*="font-size: 8rem"] {
+        font-size: 4.5rem !important;
+    }
+
     .step-item > div:last-child {
         border-top: none;
         padding-top: 0;
