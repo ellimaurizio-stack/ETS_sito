@@ -829,4 +829,16 @@ footer {
         flex-direction: column !important;
         gap: 2rem !important;
     }
+
+    /* Fix Manifesto grid and shrink numbers */
+    .manifesto-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+    .manifesto-grid > div > div:first-child {
+        font-size: 3.5rem !important;
+    }
+    .manifesto-grid > div > div:last-child {
+        max-width: 100% !important;
+    }
 }
