@@ -875,13 +875,16 @@ footer {
         width: 90vw !important;
         transform: translate(-50%, -40%) scale(0.9) !important;
         opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
         transition: all 0.3s ease !important;
         z-index: 99999 !important;
     }
     
-    .hover-style-c:hover .project-preview-popup {
+    .hover-style-c.modal-active .project-preview-popup {
         transform: translate(-50%, -50%) scale(1) !important;
         opacity: 1 !important;
+        visibility: visible !important;
         pointer-events: auto !important;
     }
 

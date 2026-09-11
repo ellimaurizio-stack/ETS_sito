@@ -80,3 +80,48 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// Mobile Project Modals Logic (with X close button)
+document.addEventListener('DOMContentLoaded', () => {
+    if (window.innerWidth <= 768) {
+        const projectItems = document.querySelectorAll('.hover-style-c');
+        projectItems.forEach(item => {
+            const popupContent = item.querySelector('.popup-content');
+            if (popupContent) {
+                // Create close X button
+                const closeBtn = document.createElement('div');
+                closeBtn.innerHTML = '&times;';
+                closeBtn.style.cssText = 'position: absolute; top: 10px; right: 15px; font-size: 2rem; color: white; cursor: pointer; line-height: 1; z-index: 999999;';
+                popupContent.style.position = 'relative';
+                popupContent.appendChild(closeBtn);
+
+                item.addEventListener('click', (e) => {
+                    // If clicking the close button
+                    if (e.target === closeBtn) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        item.classList.remove('modal-active');
+                        return;
+                    }
+                    
+                    // If it's a link and it's NOT active yet, prevent default and show modal
+                    if (!item.classList.contains('modal-active')) {
+                        e.preventDefault();
+                        // Close others
+                        document.querySelectorAll('.hover-style-c.modal-active').forEach(activeItem => {
+                            activeItem.classList.remove('modal-active');
+                        });
+                        item.classList.add('modal-active');
+                    } else {
+                        // It IS active. If they clicked outside the popup-content (the dark overlay), close it!
+                        if (!e.target.closest('.popup-content')) {
+                            e.preventDefault();
+                            item.classList.remove('modal-active');
+                        }
+                        // Otherwise (they clicked inside popup content, e.g. the CTA), let the normal navigation happen!
+                    }
+                });
+            }
+        });
+    }
+});
