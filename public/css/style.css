@@ -815,6 +815,14 @@ footer {
         margin-top: -3rem !important;
     }
 
+    /* Fix inline width and alignment for text columns on mobile */
+    div[style*="width: 65%"],
+    div[style*="align-self: flex-end"] {
+        width: 100% !important;
+        align-self: flex-start !important;
+        margin-top: 1rem !important;
+    }
+
     /* Make sure flex layouts stack properly */
     .flex-section, section > div[style*="display: flex"] {
         display: flex !important;
