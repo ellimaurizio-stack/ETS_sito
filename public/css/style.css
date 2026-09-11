@@ -816,7 +816,7 @@ footer {
     }
 
     /* Make sure flex layouts stack properly */
-    .flex-section {
+    .flex-section, section > div[style*="display: flex"] {
         display: flex !important;
         flex-direction: column !important;
         gap: 2rem !important;
