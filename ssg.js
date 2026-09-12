@@ -23,7 +23,7 @@ function wrapHtml(title, mainContent, activeSlug) {
             <li><a href="chi-siamo.html">CHI SIAMO</a></li>
             <li><a href="progetti.html">PROGETTI</a></li>
             <li><a href="sostienici.html">SOSTIENICI</a></li>
-            <li><a href="contatti.html">CONTATTI</a></li>
+            <li><a href="contatti.html">CONTATTI</a></li>\n            <li><a href="https://shop-ets.onrender.com/" target="_blank">SHOP</a></li>
         </ul>
     </nav>
     <main>`;
