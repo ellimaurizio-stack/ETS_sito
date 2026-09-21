@@ -826,21 +826,34 @@ footer {
     }
 
     /* Fix paddings that are too large */
-    section, .flex-section, .bg-gradient-blue {
+    header, header[style], section, section[style], .flex-section, .bg-gradient-blue {
+        padding-top: 2.5rem !important;
+        padding-bottom: 2.5rem !important;
         padding-left: 5% !important;
         padding-right: 5% !important;
-        padding-top: 3rem !important;
-        padding-bottom: 3rem !important;
+        min-height: auto !important;
     }
 
-    /* Fix margins */
+    /* Fix huge margins */
     div[style*="margin-top: 11rem"], 
-    div[style*="margin-top: 10rem"] {
-        margin-top: 3rem !important;
+    div[style*="margin-top: 10rem"],
+    div[style*="margin-top: 9rem"],
+    div[style*="margin-top: 8rem"],
+    div[style*="margin-top: 6rem"],
+    div[style*="margin-top: 5rem"],
+    div[style*="margin-top: 4.5rem"],
+    div[style*="margin-top: 4rem"] {
+        margin-top: 2rem !important;
+    }
+
+    div[style*="margin-bottom: 6rem"],
+    div[style*="margin-bottom: 5rem"],
+    div[style*="margin-bottom: 4rem"] {
+        margin-bottom: 2rem !important;
     }
 
     div[style*="margin-top: -10rem"] {
-        margin-top: -3rem !important;
+        margin-top: -2rem !important;
     }
 
     /* Fix inline width and alignment for text columns on mobile */
@@ -855,13 +868,13 @@ footer {
     .flex-section, section > div[style*="display: flex"] {
         display: flex !important;
         flex-direction: column !important;
-        gap: 2rem !important;
+        gap: 1.5rem !important;
     }
 
     /* Fix Manifesto grid and shrink numbers */
     .manifesto-grid {
         grid-template-columns: 1fr !important;
-        gap: 2rem !important;
+        gap: 1.5rem !important;
     }
     .manifesto-grid > div > div:first-child {
         font-size: 3.5rem !important;
