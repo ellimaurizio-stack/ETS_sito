@@ -4,6 +4,15 @@ const path = require('path');
 const genericTemplate = `<!DOCTYPE html>
 <html lang="it">
 <head>
+    <!-- Iubenda -->
+    <script type="text/javascript">
+    var _iub = _iub || [];
+    _iub.csConfiguration = {"siteId":4679291,"cookiePolicyId":98835520};
+    _iub.csLangConfiguration = {"it":{"cookiePolicyId":98835520}};
+    </script>
+    <script type="text/javascript" src="https://cs.iubenda.com/autoblocking/4679291.js"></script>
+    <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
+    <!-- End Iubenda -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A-Tono ETS - Progetto</title>
