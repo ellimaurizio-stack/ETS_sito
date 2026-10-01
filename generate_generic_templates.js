@@ -81,6 +81,32 @@ const genericTemplate = `<!DOCTYPE html>
             margin-top: 2rem;
         }
     </style>
+
+    <!-- AIO NGO Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NGO",
+      "name": "A-Tono ETS",
+      "url": "https://www.ets-atono.com",
+      "logo": "https://www.ets-atono.com/img/ets-logo-navbar.png",
+      "description": "Siamo un Ente del Terzo Settore che si occupa di connettere bisogni sociali reali con soluzioni già attive e radicate nei territori. Siamo il lato sociale e solidale del gruppo A-Tono: mettiamo persone, esperienze e know-how al servizio della comunità per dare forza a iniziative che promuovano inclusione, equità, dignità e solidarietà.",
+      "taxID": "97737800157",
+      "email": "ets@a-tono.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Corso Buenos Aires, 77",
+        "addressLocality": "Milano",
+        "postalCode": "20124",
+        "addressRegion": "MI",
+        "addressCountry": "IT"
+      },
+      "sameAs": [
+        "https://shop.ets-atono.com"
+      ]
+    }
+    </script>
+    <!-- End AIO NGO Schema -->
 </head>
 <body>
     <nav>
